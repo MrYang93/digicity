@@ -1,7 +1,0 @@
-.DS_Store
-node_modules
-npm-debug.log
-dist
-client/public
-server/data
-server/public
