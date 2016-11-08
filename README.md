@@ -407,3 +407,7 @@ git log -p
 
 
 ### 什么是“改版历史”？
+
+改版历史（ revision history ）就是由新老各个版本组成的一条线。如下图
+
+![](https://github.com/happypeter/digicity/blob/master/img/git-history.png?raw=true)
