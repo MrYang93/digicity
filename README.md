@@ -365,7 +365,22 @@ please tell me who you are
 
 ```
 git config --global user.name  "Peter Wang"
-git congit --global user.email  happypeter1983@gmail.com
+git config --global user.email  happypeter1983@gmail.com
 ```
 
-来设置用户名和邮箱。
+来设置用户名和邮箱。这样再次执行
+
+```
+$ git commit -m"I add a file"
+[master (root-commit) dcb0329] I add index.html
+ 1 file changed, 1 insertion(+)
+ create mode 100644 index.html
+```
+
+就可以成功制作一个版本了。也就是 Git 本地工作流就完成了一个完整的循序。
+
+
+
+### 查看改版历史
+
+改版历史中，会包含多个版本。每个版本中起码要包含4个 W （ Who When What Why ）
