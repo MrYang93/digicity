@@ -232,3 +232,12 @@ Github 就是程序远的微信朋友圈。但是 Github 不是发照片和心�
 
 
 Github 的参考资料：可以到 http://haoduoshipin.com/all 下面输入搜索关键字 `github` 得到。
+
+
+
+### Github 的正确使用姿势
+
+直接到 Github.com 上点 `New File` 按钮，不是正确的使用方法。要了解正确的 Github 使用方法，首先要知道什么是 Git 。
+
+
+Git 是一个可以安装到我们自己开发机器之上的软件（ Github 是一个网站）。Git 是一个版本控制工具，通常我们都是通过本地 Git 和 Github 的互动来完成版本控制工作的。
