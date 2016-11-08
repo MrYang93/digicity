@@ -379,8 +379,31 @@ $ git commit -m"I add a file"
 
 就可以成功制作一个版本了。也就是 Git 本地工作流就完成了一个完整的循序。
 
+后续如果再做第二第三个版本，就是只需要：
+
+- 修改内容用 atom
+- git add -A
+- git commit -m"msg"
+
+即可。
 
 
 ### 查看改版历史
 
-改版历史中，会包含多个版本。每个版本中起码要包含4个 W （ Who When What Why ）
+改版历史中，会包含多个版本。每个版本中起码要包含4个 W （ Who When What Why ）。
+
+那么如何来查看改版历史呢？
+
+```
+git log -p
+```
+
+`log` 是日志的意思。`-p` 是 patch （补丁，也就是修改内容）的缩写。
+
+![](https://github.com/happypeter/digicity/blob/master/img/4w-git.png?raw=true)
+
+
+小技巧：`q` 可以退出 `git log -p` 的界面，敲 `j` 可以往下翻，敲 `k` 可以往上翻。
+
+
+### 什么是“改版历史”？
