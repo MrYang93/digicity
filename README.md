@@ -427,3 +427,9 @@ git clone git@github.com:happypeter/digicity.git
 ```
 
 clone 的特点就是不仅仅可以得到最新代码，而且可以得到整个改版历史。而普通下载只能得到最新版本。
+
+
+### git 各个命令的作用
+
+
+`git diff`  
