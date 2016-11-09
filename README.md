@@ -165,7 +165,7 @@ mv 被移动的文件或者文件夹的路径  目标文件夹位置
 ### 重命名
 
 
-```
+```git@github.com:happypeter/digicity.git
 mv 被移动的文件或者文件夹的路径  不存在的位置/文件名
 ```
 
@@ -179,7 +179,7 @@ mv 被移动的文件或者文件夹的路径  不存在的位置/文件名
 cp 被拷贝的的文件  目标位置
 ```
 
-拷贝文件夹
+拷贝文件夹git@github.com:happypeter/digicity.git
 
 ```
 cp -r 被拷贝的的文件夹 目标位置
@@ -197,7 +197,7 @@ cp -r 被拷贝的的文件夹 目标位置
 ### 回顾命令行基础知识
 
 ```
-rm -r Directory
+rm -r Directorygit@github.com:happypeter/digicity.git
 ```
 
 一个命令通常都是由三部分组成：命令本身+选项+一个或者多个参数
@@ -411,3 +411,19 @@ git log -p
 改版历史（ revision history ）就是由新老各个版本组成的一条线。如下图
 
 ![](https://github.com/happypeter/digicity/blob/master/img/git-history.png?raw=true)
+
+
+
+# 2016年11月9日
+
+
+### git clone 命令
+
+
+要想把 github 上的一个项目代码下载到本地有两种方式，一种就是普通下载（ download ）。但是，开发者基本上会选择另外一种方式，就是 clone 。
+
+```
+git clone git@github.com:happypeter/digicity.git
+```
+
+clone 的特点就是不仅仅可以得到最新代码，而且可以得到整个改版历史。而普通下载只能得到最新版本。
