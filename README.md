@@ -420,7 +420,8 @@ git log -p
 ### git clone 命令
 
 
-要想把 github 上的一个项目代码下载到本地有两种方式，一种就是普通下载（ download ）。但是，开发者基本上会选择另外一种方式，就是 clone 。
+要想把 github 上的一个项目代码下载到本地有两种方式，一种就是普通下载（ download ）。但是，开发者
+基本上会选择另外一种方式，就是 clone 。
 
 ```
 git clone git@github.com:happypeter/digicity.git
@@ -432,4 +433,6 @@ clone 的特点就是不仅仅可以得到最新代码，而且可以得到整�
 ### git 各个命令的作用
 
 
-`git diff`  
+- `git diff` 用来查看当前的修改内容（内容未被添加到 git ，仅限于文件名已经被 git 跟踪的文件 ）
+- `git status` 用来查看当前修改内容（主要显示文件名，包含未被跟踪的文件）
+- `git push` 把本地仓库中有，而远端对应仓库中没有的
