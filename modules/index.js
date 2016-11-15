@@ -1,3 +1,7 @@
-import school from './class';
+import {i, Person} from './Person';
 
-school('peter',['newming','hello'])
+let peter = new Person;
+peter.sayHello();
+
+// let i = 10;
+console.log(i);

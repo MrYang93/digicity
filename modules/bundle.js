@@ -46,48 +46,16 @@
 
 	'use strict';
 
-	var _class = __webpack_require__(1);
+	var _Person = __webpack_require__(1);
 
-	var _class2 = _interopRequireDefault(_class);
+	var peter = new _Person.Person();
+	peter.sayHello();
 
-	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
-
-	(0, _class2.default)('peter', ['newming', 'hello']);
+	// let i = 10;
+	console.log(_Person.i);
 
 /***/ },
 /* 1 */
-/***/ function(module, exports, __webpack_require__) {
-
-	'use strict';
-
-	Object.defineProperty(exports, "__esModule", {
-	  value: true
-	});
-
-	var _student = __webpack_require__(2);
-
-	var _student2 = _interopRequireDefault(_student);
-
-	var _teacher = __webpack_require__(3);
-
-	var _teacher2 = _interopRequireDefault(_teacher);
-
-	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
-
-	// teacher.add('Peter');
-
-	function add(teacherName, students) {
-	  (0, _teacher2.default)(teacherName);
-
-	  students.forEach(function (item) {
-	    (0, _student2.default)(item);
-	  });
-	}
-
-	exports.default = add;
-
-/***/ },
-/* 2 */
 /***/ function(module, exports) {
 
 	'use strict';
@@ -95,26 +63,29 @@
 	Object.defineProperty(exports, "__esModule", {
 	  value: true
 	});
-	function add(student) {
-	  console.log('Add student:' + student);
-	}
 
-	exports.default = add;
+	var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
 
-/***/ },
-/* 3 */
-/***/ function(module, exports) {
+	function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
 
-	'use strict';
+	var Person = function () {
+	  function Person() {
+	    _classCallCheck(this, Person);
+	  }
 
-	Object.defineProperty(exports, "__esModule", {
-	  value: true
-	});
-	function add(teacher) {
-	  console.log('Add Teacher:' + teacher);
-	}
+	  _createClass(Person, [{
+	    key: 'sayHello',
+	    value: function sayHello() {
+	      console.log('hello');
+	    }
+	  }]);
 
-	exports.default = add;
+	  return Person;
+	}();
+
+	var i = 1;
+	exports.Person = Person;
+	exports.i = i;
 
 /***/ }
 /******/ ]);
