@@ -19,5 +19,13 @@ module.exports = {
   },
   plugins: [
     new webpack.HotModuleReplacementPlugin(),
-  ]
+  ],
+  resolve: {
+    extensions: ["", ".js", ".jsx"]
+  },
+  module: {
+    loaders: [
+      { test: /\.js[x]?$/, exclude: /node_modules/, loader: "babel-loader" }
+    ]
+  }
 }
