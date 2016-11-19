@@ -1,4 +1,4 @@
-// 开发时的配置文件
+// 开发时的配置文件,主要服务与webpack-dev-server
 var path = require('path');
 var webpack = require('webpack');
 
