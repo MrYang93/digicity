@@ -7,6 +7,9 @@ h1{
   font-size: 48px;
   text-align: center;
 }
+/*.menu{
+  background-image: url(./images/avater.jpg);
+}*/
 .menu li{
   cursor: pointer;
 }
