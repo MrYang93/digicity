@@ -13,7 +13,8 @@ class Header extends React.Component{
   handleClick(){
     // console.log(this);
     this.setState({
-      hello:this.state.hello + 1
+      hello:this.state.hello + 1,
+      show:!this.state.show
     })
   }
   render(){
