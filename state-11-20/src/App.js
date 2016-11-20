@@ -8,9 +8,13 @@ class App extends React.Component{
     }
   }
   handleClick(){
-    this.setState({show:!this.state.show})
+    this.setState( (prevState,props) => ({show:!prevState.show}) );
+    // this.setState(
+    //   {show:!this.state.show}
+    // )
   }
   render(){
+    // console.log(this.state.show);
     return(
       <div>
         <button onClick={this.handleClick.bind(this)}>click</button>
