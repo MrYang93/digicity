@@ -1,0 +1,29 @@
+*{
+  margin: 0;
+  padding: 0;
+  box-sizing:border-box;
+}
+.menu{
+  position: absolute;
+  top:0;
+  bottom:0;
+  background-color: #fff;
+  width: 200px;
+  transition: all 0.75s ease-out;
+}
+.menu h3{
+  text-align: center;
+  color:#fff;
+  padding: 20px;
+  font-size: 28px;
+  width: 100%;
+  background-color: #00bcd4;
+}
+.cover{
+  position: absolute;
+  top:0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  background-color: rgba(0, 0, 0, 0.6);
+}
