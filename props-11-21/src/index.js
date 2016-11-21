@@ -9,9 +9,9 @@ import './main.css';
 ReactDOM.render(<Cards />,
   document.getElementById('root'));
 
-
-
-
+// let arr = ['sfdsf','aaaa','dddd','eeee'];
+// let xxx = arr.map( (item,index) => `${item}我修改了` )
+// console.log(xxx);
 
 // let comment =[
 //   '这是第一条评论',
