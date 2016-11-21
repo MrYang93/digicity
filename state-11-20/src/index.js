@@ -4,6 +4,7 @@ import ReactDOM from 'react-dom';
 // import App from './App';
 // import Test from './Test';
 import SelectBar from './SelectBar';
+// import Animate from './Animate';
 
 import './main.css';
 
