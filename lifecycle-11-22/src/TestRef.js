@@ -9,8 +9,13 @@ class TestRef extends React.Component{
   render(){
     return(
       <div>
-        <Add ref='add'/>
-        <button onClick={this.handleClick.bind(this)}>父组件加一</button>
+        <Add>
+          我是1
+        </Add>
+        <Add>
+          <p>hello</p>
+        </Add>
+        {/* <button onClick={this.handleClick.bind(this)}>父组件加一</button> */}
       </div>
     )
   }
