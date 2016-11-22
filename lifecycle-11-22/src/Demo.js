@@ -7,10 +7,10 @@ class Demo extends React.Component{
       demoNum:5
     }
   }
-  // componentWillReceiveProps(nextProps){
-  //   console.log(nextProps,'ssssss');
-  //   console.log('componentWillReceiveProps==========');
-  // }
+  componentWillReceiveProps(nextProps){
+    console.log(nextProps,'ssssss');
+    console.log('componentWillReceiveProps==========');
+  }
   // shouldComponentUpdate(nextProps, nextState){
   //   console.log('shouldComponentUpdate=======');
   //   return true;
@@ -24,7 +24,7 @@ class Demo extends React.Component{
     clearInterval(this.interval)
   }
   componentDidMount(){
-    this.interval = setInterval(() => this.tick(), 1000);
+    // this.interval = setInterval(() => this.tick(), 1000);
   }
   componentDidUpdate(){
     console.log(this.state.demoNum);
@@ -38,7 +38,7 @@ class Demo extends React.Component{
       <div>
         我是demo组件
         {this.props.num}<br/>
-        自身的state数字{this.state.demoNum}
+        我的state{this.state.demoNum}
       </div>
     )
   }
