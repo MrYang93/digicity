@@ -6,7 +6,7 @@ import {data} from './data';
 class Cards extends React.Component{
   render(){
     let cards = data.map( (item,index) => <Card key={index} title={item.title} index={item.index} date={item.date}/>)
-    console.log(cards);
+    // console.log(cards);
     return(
       <div>
         {cards}
