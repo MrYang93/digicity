@@ -12,8 +12,8 @@ class App extends React.Component{
       ]
     }
   }
-  handleCompleted(){
-    alert('我是父组件的方法')
+  handleCompleted(i){
+    console.log(i);
   }
   handleSubmit(e){
     e.preventDefault();
