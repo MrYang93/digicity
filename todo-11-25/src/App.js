@@ -13,7 +13,9 @@ class App extends React.Component{
     }
   }
   handleCompleted(i){
-    console.log(i);
+    // console.log(i);
+    this.state.items[i].completed = !this.state.items[i].completed;
+    this.setState({items:this.state.items})
   }
   handleSubmit(e){
     e.preventDefault();
