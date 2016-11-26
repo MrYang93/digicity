@@ -17,6 +17,10 @@ class App extends React.Component{
     this.state.items[i].completed = !this.state.items[i].completed;
     this.setState({items:this.state.items})
   }
+  handleDel(i){
+    this.state.items.splice(i,1);
+    this.setState({items:this.state.items})
+  }
   handleSubmit(e){
     e.preventDefault();
     let inputValue = this.refs.input.value.trim();
@@ -33,7 +37,8 @@ class App extends React.Component{
     return(
       <div>
         <h1>TODO</h1>
-        <TodoList items={this.state.items} handleCompleted={this.handleCompleted.bind(this)}/>
+        <TodoList items={this.state.items} handleCompleted={this.handleCompleted.bind(this)}
+        handleDel={this.handleDel.bind(this)}/>
         <form onSubmit={this.handleSubmit.bind(this)}>
           <input placeholder='add a todo' ref='input'/>
           <button type='submit'>ADD # {this.state.items.length+1}</button>
