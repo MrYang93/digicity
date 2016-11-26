@@ -8,11 +8,11 @@ class App extends React.Component{
     super();
     this.state={
       items:[
-        {title:'我没完成',completed:false},
-        {title:'我完成了',completed:true}
+        {title:'我没完成',completed:false,id:1},
+        {title:'我完成了',completed:true,id:2}
       ],
       // 0:all,1:active,2:completed
-      show:2
+      show:0
     }
   }
   handleCompleted(i){
@@ -24,6 +24,9 @@ class App extends React.Component{
     this.state.items.splice(i,1);
     this.setState({items:this.state.items})
   }
+  handleShow(i){
+    this.setState({show:i})
+  }
   handleSubmit(e){
     e.preventDefault();
     let inputValue = this.refs.input.value.trim();
@@ -32,7 +35,7 @@ class App extends React.Component{
       this.refs.input.focus();
       return alert('输入内容不能为空！')
     }
-    let newItem = {title:inputValue,completed:false};
+    let newItem = {title:inputValue,completed:false,id:new Date()};
     this.state.items.push(newItem);
     this.setState({items:this.state.items})
   }
@@ -57,7 +60,7 @@ class App extends React.Component{
           <input placeholder='add a todo' ref='input'/>
           <button type='submit'>ADD # {this.state.items.length+1}</button>
         </form>
-        <TodoControl />
+        <TodoControl handleShow={this.handleShow.bind(this)}/>
       </div>
     )
   }
