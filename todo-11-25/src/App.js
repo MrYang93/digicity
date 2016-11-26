@@ -17,20 +17,20 @@ class App extends React.Component{
   }
   handleCompleted(id){
     // console.log(id);
-    var index = this.state.items.findIndex(function (ele) {
-      return ele.id==id
-    })
+    let index = this.myFindIndex(id);
     // console.log(index);
     this.state.items[index].completed = !this.state.items[index].completed;
     this.setState({items:this.state.items})
   }
   handleDel(id){
-    var index = this.state.items.findIndex(function (ele,i) {
-      return ele.id==id
-    })
+    let index = this.myFindIndex(id);
     // console.log(id);
     this.state.items.splice(index,1);
     this.setState({items:this.state.items})
+  }
+  myFindIndex(id){
+    var index = this.state.items.findIndex( ele => ele.id==id )
+    return index;
   }
   handleShow(i){
     this.setState({show:i})
@@ -60,17 +60,17 @@ class App extends React.Component{
         return element.completed==true
       })
     }
-    console.log(this.state.items);
+    // console.log(this.state.items);
     return(
-      <div>
+      <div className="main">
         <h1>TODO</h1>
+        <form onSubmit={this.handleSubmit.bind(this)}>
+          <input placeholder='add a todo' ref='input' className='add'/>
+          <button type='submit' className='addbtn'>ADD # {this.state.items.length+1}</button>
+        </form>
         <TodoList items={showItems} handleCompleted={this.handleCompleted.bind(this)}
         handleDel={this.handleDel.bind(this)}/>
-        <form onSubmit={this.handleSubmit.bind(this)}>
-          <input placeholder='add a todo' ref='input'/>
-          <button type='submit'>ADD # {this.state.items.length+1}</button>
-        </form>
-        <TodoControl handleShow={this.handleShow.bind(this)}/>
+        <TodoControl handleShow={this.handleShow.bind(this)} show={this.state.show}/>
       </div>
     )
   }
