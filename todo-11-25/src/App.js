@@ -15,13 +15,21 @@ class App extends React.Component{
       show:0
     }
   }
-  handleCompleted(i){
-    // console.log(i);
-    this.state.items[i].completed = !this.state.items[i].completed;
+  handleCompleted(id){
+    // console.log(id);
+    var index = this.state.items.findIndex(function (ele,i) {
+      return id==ele.id
+    })
+    // console.log(index);
+    this.state.items[index].completed = !this.state.items[index].completed;
     this.setState({items:this.state.items})
   }
-  handleDel(i){
-    this.state.items.splice(i,1);
+  handleDel(id){
+    var index = this.state.items.findIndex(function (ele,i) {
+      return id==ele.id
+    })
+    // console.log(id);
+    this.state.items.splice(index,1);
     this.setState({items:this.state.items})
   }
   handleShow(i){
@@ -35,7 +43,8 @@ class App extends React.Component{
       this.refs.input.focus();
       return alert('输入内容不能为空！')
     }
-    let newItem = {title:inputValue,completed:false,id:new Date()};
+    let date = new Date();
+    let newItem = {title:inputValue,completed:false,id:date.getTime()};
     this.state.items.push(newItem);
     this.setState({items:this.state.items})
   }
