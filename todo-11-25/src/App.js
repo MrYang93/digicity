@@ -17,8 +17,8 @@ class App extends React.Component{
   }
   handleCompleted(id){
     // console.log(id);
-    var index = this.state.items.findIndex(function (ele,i) {
-      return id==ele.id
+    var index = this.state.items.findIndex(function (ele) {
+      return ele.id==id
     })
     // console.log(index);
     this.state.items[index].completed = !this.state.items[index].completed;
@@ -26,7 +26,7 @@ class App extends React.Component{
   }
   handleDel(id){
     var index = this.state.items.findIndex(function (ele,i) {
-      return id==ele.id
+      return ele.id==id
     })
     // console.log(id);
     this.state.items.splice(index,1);
@@ -60,6 +60,7 @@ class App extends React.Component{
         return element.completed==true
       })
     }
+    console.log(this.state.items);
     return(
       <div>
         <h1>TODO</h1>
