@@ -12,6 +12,9 @@ class App extends React.Component{
       ]
     }
   }
+  handleCompleted(){
+    alert('我是父组件的方法')
+  }
   handleSubmit(e){
     e.preventDefault();
     let inputValue = this.refs.input.value.trim();
@@ -28,7 +31,7 @@ class App extends React.Component{
     return(
       <div>
         <h1>TODO</h1>
-        <TodoList items={this.state.items}/>
+        <TodoList items={this.state.items} handleCompleted={this.handleCompleted.bind(this)}/>
         <form onSubmit={this.handleSubmit.bind(this)}>
           <input placeholder='add a todo' ref='input'/>
           <button type='submit'>ADD # {this.state.items.length+1}</button>

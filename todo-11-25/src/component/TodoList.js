@@ -2,7 +2,7 @@ import React from 'react';
 
 class TodoList extends React.Component{
   handleChange(){
-    
+    this.props.handleCompleted();
   }
   render(){
     let list = this.props.items.map( item =>
