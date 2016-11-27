@@ -1,5 +1,7 @@
 import React from 'react';
-import $ from 'jquery';
+import axios from 'axios';
+
+import GitShow from './GitShow';
 
 class App extends React.Component{
   constructor(){
@@ -9,34 +11,20 @@ class App extends React.Component{
       wait:true
     }
   }
-  componentDidMount(){
-    var _this = this;
-    // 1.原生
-    var request = new XMLHttpRequest();
-    //监听state变化
-    request.onreadystatechange=function(){
-      if (request.readyState==4 && request.status==200){
-        var dataObg = JSON.parse(request.responseText);
-        console.log(dataObg);
-        _this.setState({
-          data:dataObg,
-          wait:false
-        })
-      }
-    }
-    request.open("GET","https://api.github.com/users/newming",true);
-    request.send();
-
+  handleSubmit(e){
+    e.preventDefault();
+    let value = this.refs.input.value;
+    axios.get(`https://api.github.com/users/${value}`)
+      .then( response => this.setState({data:response.data,wait:false}) )
+      .catch( error => alert(error) )
   }
   render(){
-
     return(
       <div>
-        {this.state.wait ? '正在加载数据' :
-          <div>
-            <img src={this.state.data.avatar_url}/>
-            <p>微信号：{this.state.data.bio}</p>
-          </div>}
+        <form onSubmit={this.handleSubmit.bind(this)}>
+          <input placeholder='search git' ref='input'/>
+        </form>
+        {this.state.wait?'loading....':<GitShow gitinfo={this.state.data}/>}
       </div>
     )
   }
