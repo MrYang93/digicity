@@ -7,9 +7,7 @@ class Home extends React.Component{
     return(
       <div>
         <MenuBar />
-
         {this.props.children}
-
         <Footer />
       </div>
     )
