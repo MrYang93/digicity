@@ -31,7 +31,7 @@ title: JS 独孤求败
        happypeter
       </div>
       <div class="job-title"><a href="http://haoduoshipin.com">本书作者，好多视频网作者</a></div>
-      挥汗写下本书，致敬北京 Linux 用户组的那些曾经帮助过我的朋友们。<a href="history.html">点击查看</a> Gitbeijing 的由来。
+      JS 吃世界。
     </div>
   </div>
 </div>
