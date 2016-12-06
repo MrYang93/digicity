@@ -1,5 +1,5 @@
 ---
-HTML/CSS 基础部分
+title: 课程大纲
 ---
 
 不用介绍太多 H5 的高级特性，canvas/svg/audio/video 介绍一下就行
