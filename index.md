@@ -25,7 +25,7 @@ title: JS 独孤求败
 </div>
 <div class="reviewers">
   <div class="name-card">
-    <img src="images/index/peter.jpg">
+    <img src="https://avatars1.githubusercontent.com/u/72467?v=3&s=460">
     <div class="text">
       <div class="name">
        happypeter
