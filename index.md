@@ -17,7 +17,7 @@ title: JS 独孤求败
       </p>
       <a href="http://haoqicat.com/gitbeijing" class="read-btn">购买视频课程</a>
     </div>
-    <img alt="git" class="book-image" src="images/index/cover_3d_move2github.png"/>
+    <img alt="git" class="book-image" src="img/book-cover.jpg"/>
   </div>
 </section>
 <div class="divider">
