@@ -7,7 +7,7 @@ title: JS 独孤求败
   <div class='wrapper-inside clearfix'>
     <div class='top-large'>
       <div class='book-title'>
-        搬进 Github
+        《 JS 独孤求败》
       </div>
       <div class='book-author'>
         <a href="https://github.com/happypeter">happypeter</a>
@@ -15,7 +15,7 @@ title: JS 独孤求败
       <p class='book-description'>
         《 JS 独孤求败》是一本把你从零基础学员变成一个编程高手的厚厚的书。
       </p>
-      <a href="http://haoqicat.com/gitbeijing" class="read-btn">购买视频课程</a>
+      <a href="http://haoqicat.com/gitbeijing" class="read-btn">开始阅读</a>
     </div>
     <img alt="git" class="book-image" src="img/book-cover.jpg"/>
   </div>
