@@ -1,6 +1,6 @@
 ---
 layout: default
-title: git
+title: JS 独孤求败
 ---
 
 <section class='book'>
@@ -13,7 +13,7 @@ title: git
         <a href="https://github.com/happypeter">happypeter</a>
       </div>
       <p class='book-description'>
-        《 Git 北京》是一本带初学者学会 git 版本控制工具和 github.com 社交化编程平台的书。用爱打造。这里免费开放的《搬进 Github》是《 Git 北京》的第一部分内容。
+        《 JS 独孤求败》是一本把你从零基础学员变成一个编程高手的厚厚的书。
       </p>
       <a href="http://haoqicat.com/gitbeijing" class="read-btn">购买视频课程</a>
     </div>
@@ -21,7 +21,7 @@ title: git
   </div>
 </section>
 <div class="divider">
-  <a href="http://haoqicat.com/gitbeijing">访问好奇猫网站上完整的《 Git 北京》视频课程</a>
+  <a href="#">PLACEHOLDER</a>
 </div>
 <div class="reviewers">
   <div class="name-card">
