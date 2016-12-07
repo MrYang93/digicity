@@ -31,11 +31,10 @@ Express 就是用来制作后台接口的，或者说叫制作后台 API 的。
 
 第一步，要新建文件夹，并把它初始化为一个 Nodejs 项目：
 
-```
+```console
 mkdir express-hello
 cd express-hello
-npm init -y
-```
+npm init -
 
 这样文件夹内就会生成一个 package.json ，有了这个文件，我们这个文件夹就可以
 叫做一个 **Nodejs 项目** 了 。
@@ -95,7 +94,7 @@ ES6 模块语法的），我们的后台代码暂时需要用 require
 
 到项目中，创建一个 index.js 文件，内容如下：
 
-```
+```js
 const express =  require('express');
 const app = express();
 
