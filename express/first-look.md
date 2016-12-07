@@ -225,3 +225,98 @@ http://localhost:3000/
 只能把字符串打印到后台。
 
 ### 前端和后端
+
+前端，front-end，或者也可以叫前台。后端，back-end
+也可叫后台。
+
+前端代码运行环境是什么呢？对于我们 Web 开发者来说，就是浏览器。
+注意，浏览器是安装在用户自己的机器上的。也就是说前端代码运行在我们
+自己的笔记本或者 ipad 上，如果前端代码写的烂，那么考验的是我们自己
+设备的内存大小。
+
+
+后端代码运行环境是？是一个放在人家机房里的刀片机。上面运行 Linux 操作系统。刀片机根本就没有显示器，当然也不能跑浏览器。所以后端代码的
+运行是脱离浏览器的。如果后端写的烂，那么考验的就是刀片机的内存够不够了。
+
+然后，再从 API 的角度来聊聊。前端是 API 的消费者，后端是 API 的
+生产者。后台 API 写好之后，默认不运行，只有当前端发送过请求来的
+时候才会出发后台 API 代码运行。
+
+
+当然，在平常开发的时候，我们并没购买刀片机，所有只能是用自己的笔记
+本来当刀片机用了。这时候，基本可以认为 express 写的代码就是后端
+代码，react 写的代码就是前端代码。
+
+
+### 继续前面的代码：返回字符串
+
+前面的回调函数中，console.log 打印字符串，只是出现在后端（服务器端）。前端得不到任何反馈。所以，我们可以把代码做如下修改
+
+```js
+app.get('/', function(req, res){
+  res.send('Hello World');
+})
+```
+
+上面代码中 `req` 是 request **请求**的简写， `res` 是 response **响应**的简写 。`res.send('Hello World');`
+的作用是从后端向前端浏览器返回字符串 `Hello World` 。
+
+
+### 总结
+
+到这里，我们一个 Express 的 Hello World API 就制作完毕，
+我们需要掌握的概念就是：
+
+- 前端和后端的区别
+- API 基本格式
+- Express 使用方式
+
+
+### 全部代码
+
+package.json 如下：
+
+```json
+{
+  "name": "express-hello",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "express": "^4.14.0"
+  }
+}
+```
+
+index.js 代码如下
+
+```js
+const express =  require('express');
+const app = express();
+
+
+// 下面三行就是我们实现的一个 API
+app.get('/', function(req, res){
+  res.send('Hello World');
+})
+
+app.listen(3000, function(){
+  console.log('running on port 3000...');
+});
+```
+
+上面两个文件都放在一个 express-hello 文件夹中，然后
+
+```
+cd express-hello
+npm install
+node index.js
+```
+
+就可以把代码运行起来了。
