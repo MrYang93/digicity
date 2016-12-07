@@ -45,7 +45,69 @@ npm init -y
 - 工具：就是完成特定的一个小功能的软件，比如 Babel
 - 库： 英文叫 lib ，我们每天 import 的东西，都是库。库是把一系列相关工具，组织到一起。例如，lodash ，react 。库里面的东西虽然多，但是都是干一类工作的。
 - 框架：英文是 framework ，是把很多类功能的工具和库集合到一起，目的是完成整个项目。
-  例如，RubyOnRails，Django ，J2EE ，React+friends ，Anguler ，Meteor 。
+  例如，RubyOnRails
+
+### 继续 Express 的 Hello World
+
+下一步，进行装包
+
+```
+npm install --save express
+```
+
+小贴士：一个常见装包错误，如果我们项目文件夹的名和要装的包名同名，例如
+
+```
+mkdir express
+cd express
+npm init -y
+npm install --save express
+```
+
+安装就会失败，报错信息为：
+
+```
+Refusing to install express as a dependency of itself
+```
+
+解决方法就是：修改项目文件夹名。
+
+小贴士结束。
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
