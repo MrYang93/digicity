@@ -25,10 +25,10 @@ title: React 牵手 Express
 小贴士结束
 
 
-代码如下：
+所有代码都放到 react-with-express 这个文件夹中，代码如下：
+
 
 src/index.js
-
 ```js
 import React, { Component } from 'react';
 import ReactDOM from 'react-dom';
@@ -131,3 +131,35 @@ index.html
 </body>
 </html>
 ```
+### 为何 state 要设置两次
+
+上面代码都是 React 的基础，我们不在重复，唯一可能感觉奇怪的是
+为何 constructor 中设置了一个 username 的初始值，然后又在
+生命周期函数 componentWillMount 中对 username 进行了覆盖。
+
+为何要这么麻烦呢？这个后面结合 axios 向后台请求数据的代码，就会
+比较容易看出作用了。
+
+下面来看如何发请求到服务器端。
+
+
+### 安装 axios 发送 http 请求
+
+axios 是常用的发 http 请求的工具（现在一般不提发 ajax 请求这个说法了）。
+
+首先来进行装包：
+
+```
+npm install --save axios
+```
+
+把 axios 安装到 react-with-express 这个项目中。
+
+装包之后，就可以到 src/index.js 中去使用了，代码如下
+
+```
+import axios from 'axios';
+```
+
+我们当前的请求不希望是通过按钮来触发，而是希望，页面加载的时候，自动发出
+http 请求，向服务要数据，所以，代码非常适合写到生命周期函数中：
