@@ -1,0 +1,13 @@
+@charset "UTF-8";
+
+/* 选择符 selector ，目前介绍了两种*/
+
+h1 {
+  /* 使用标签名作选择符 */
+  color: green;
+}
+
+.first {
+  /* 使用 class 名作选择符 */
+  color: teal;
+}

@@ -1,0 +1,18 @@
+.header {
+  height: 40px;
+  background: rgb(246, 130, 117);
+}
+
+.left {
+  background: rgb(186, 103, 199);
+  float: left;
+  height: 200px;
+  width: 30%;
+}
+
+.right {
+  background: rgb(130, 198, 133);
+  float: right;
+  height: 200px;
+  width: 70%;
+}

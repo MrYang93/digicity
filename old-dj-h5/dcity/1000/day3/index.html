@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <title>day3</title>
+
+  <style>
+  body {
+    margin: 0;
+    font-family: sans-serif;
+    background-color: rgb(54, 57, 52);
+  }
+  .header {
+    height: 70px;
+    background-color: rgb(144, 165, 117);
+    color: #fff;
+    font-size: 19px;
+    text-align: center;
+    /* 让文字水平居中 */
+
+    line-height: 70px;
+    /* 让文字垂直居中 */
+  }
+  .main {
+    height: 500px;
+    width: 960px;
+    margin: 0 auto;
+    /* 块元素居中的最常用的方法 */
+  }
+  .main .left {
+    height: 500px;
+    /* 实际中这个高度是不设的，根据内容的高度自动获得 */
+    float: left;
+    width: 40%;
+    background: rgb(123, 180, 37);
+  }
+  .main .right {
+    height: 500px;
+    float: right;
+    width: 60%;
+    background: rgb(162, 162, 162);
+  }
+  .footer {
+    height: 70px;
+    background: rgb(226, 237, 210);
+  }
+  </style>
+</head>
+<body>
+  <div class="header">
+    I am Peter!
+  </div>
+  <div class="main">
+    <div class="left"></div>
+    <div class="right"></div>
+  </div>
+  <div class="footer"></div>
+</body>
+</html>

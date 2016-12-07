@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <title>dc</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <link rel='stylesheet' id='google-fonts-css'  href='font.css' type='text/css' />
+  <link rel="stylesheet" href="css/main.css">
+</head>
+<body>
+  <div class="header">
+    <div class="container">
+      <a href="/dcity" class="home">
+        DigiCity
+      </a>
+      <!--[if lte IE 9]>
+      <span style="padding: 0 5px; float: left; color: white; font-weight: bold; line-height: 64px">>>></span>
+      <![endif]-->
+      <span class="chapter-title">
+        day1
+      </span>
+     </div>
+   </div>
+   <div class="main container">
+     <div class="card">
+     <p>课程中会用到的最最重要的两个工具：</p>
+
+<h3 id="editor">编辑器 editor</h3>
+
+<p>sublime 下载地址：<a href="http://www.sublimetext.com/">http://www.sublimetext.com/</a></p>
+
+<h3 id="browser">浏览器 browser</h3>
+
+<p>chrome</p>
+
+<h3 id="sublime-">sublime 快捷键</h3>
+
+<p>Ctrl-N 新建</p>
+
+<p>Ctrl-S 保存</p>
+
+<p>如果要保存成网页，那么文件的后缀应该是 <code>.html</code> ，例如保存成 hello.html</p>
+
+<p>html 是一种文件格式，是 HyperText Markup Language 的缩写。</p>
+
+<h3 id="html---">什么是 HTML （ 超文本标记语言 ）</h3>
+
+<p>HyperText  Markup  Language</p>
+
+<p>超文本       标记    语言</p>
+
+<h3 id="html-">什么是一个 html 的“元素”？</h3>
+
+<div class="highlight"><pre><code class="language-html" data-lang="html"><span class="nt">&lt;h1&gt;</span>hello<span class="nt">&lt;/h1&gt;</span></code></pre></div>
+
+<p>元素 = 开始标签 + 内容 + 结束标签</p>
+
+<div class="highlight"><pre><code class="language-html" data-lang="html"><span class="nt">&lt;a</span> <span class="na">href=</span><span class="s">"http://baidu.com"</span><span class="nt">&gt;</span>baidu.com<span class="nt">&lt;/a&gt;</span></code></pre></div>
+
+<p>“属性”就是上面的 <code>href="http://baidu.com"</code></p>
+
+<h3 id="html--1">一个 html 页面的基本结构</h3>
+
+<p>可以在 sublime 中敲 <code>html&lt;tab&gt;</code> 来显示出来</p>
+
+<div class="highlight"><pre><code class="language-html" data-lang="html"><span class="nt">&lt;html&gt;</span>
+<span class="nt">&lt;head&gt;</span>
+  <span class="nt">&lt;title&gt;</span>nice<span class="nt">&lt;/title&gt;</span>
+<span class="nt">&lt;/head&gt;</span>
+<span class="nt">&lt;body&gt;</span>
+  hello
+<span class="nt">&lt;/body&gt;</span>
+<span class="nt">&lt;/html&gt;</span></code></pre></div>
+
+<p>老祖宗是 html 里面包括两兄弟 head 和 body</p>
+
+<h3 id="section">字符编码</h3>
+
+<p>让浏览器用 utf-8</p>
+
+<div class="highlight"><pre><code class="language-html" data-lang="html"><span class="nt">&lt;meta</span> <span class="na">charset=</span><span class="s">"utf-8"</span><span class="nt">&gt;</span></code></pre></div>
+
+<h3 id="section-1">添加样式</h3>
+
+<p>如何让一个一级标题变成绿色：</p>
+
+<p>第一种方式：行内样式</p>
+
+<div class="highlight"><pre><code class="language-html" data-lang="html"><span class="nt">&lt;h1</span> <span class="na">style=</span><span class="s">"color: green"</span><span class="nt">&gt;</span> hello <span class="nt">&lt;/h1&gt;</span></code></pre></div>
+
+<p>第二种方式：页内方式</p>
+
+<div class="highlight"><pre><code class="language-html" data-lang="html"><span class="nt">&lt;style&gt;</span>
+ <span class="nt">h1</span> <span class="p">{</span>
+   <span class="nl">color</span><span class="p">:</span> <span class="m">#bada33</span><span class="p">;</span>
+   <span class="nl">font-size</span><span class="p">:</span> <span class="m">70px</span><span class="p">;</span>
+ <span class="p">}</span>
+<span class="nt">&lt;/style&gt;</span></code></pre></div>
+
+<p>第三种方式：独立的 css 文件</p>
+
+<div class="highlight"><pre><code class="language-html" data-lang="html"><span class="nt">&lt;link</span> <span class="na">rel=</span><span class="s">"stylesheet"</span> <span class="na">href=</span><span class="s">"main.css"</span><span class="nt">&gt;</span></code></pre></div>
+
+<p>然后创建 main.css 来书写样式规则就好了。</p>
+
+<h3 id="section-2">什么是层叠样式表</h3>
+
+<p>CSS – Cascading Style Sheet – 层叠样式表</p>
+
+<h3 id="html--2">如何学习众多的 html 元素标签</h3>
+
+<p>看书系统学？NO！</p>
+
+<p>采用一种临摹的思维来学习。使用 Chrome 的开发者工具。右击 -&gt; 查看元素（ inspect element ）</p>
+
+<p>会看到各个网站书写方式会有差别，权威解释的资料在哪里？ 百度搜的时候加上 <code>mdn</code> 会更好。</p>
+
+<p>参考视频：<a href="http://c.haoduoshipin.com/guaishou/#learn-css-attributes">http://c.haoduoshipin.com/guaishou/#learn-css-attributes</a></p>
+
+<h3 id="section-3">今天的制作页面</h3>
+
+<p><a href="http://c.haoduoshipin.com/dcity/1000/day1/">http://c.haoduoshipin.com/dcity/1000/day1/</a></p>
+
+<p>查看源码可以看到相应的代码和注释</p>
+
+<h3 id="section-4">扩展阅读</h3>
+
+<p>快乐的 sublime 编辑器：<a href="http://www.imooc.com/learn/333">http://www.imooc.com/learn/333</a></p>
+
+     </div>
+   </div>
+</body>
+</html>

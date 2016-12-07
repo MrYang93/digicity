@@ -1,0 +1,21 @@
+首页是目录，以天为单位。大概就是10天的课，每一天是一个卡片。点进去，里面有三到四个视频卡片，。视频都发布到好多视频网上，但是每一天的页面上会有笔记。每个卡片都有 anchor 。每个视频卡片上，列出里面包含的视频名，并 anchor 过去。
+
+要 responsive 不要图片，方便大家在手机上看。直接手写 html，不用 jekyll 便于大家学习。
+
+
+Update： 每天的内容全部配视频工作量太大了，而且跟小怪兽课程的工作也有重复。还是这样，每天打开的内容就是我课堂笔记的好看的版本，里面嵌入参考视频，可以是原来的老视频，也可以是这门课我专门给大家录制的。这样挺灵活。所以还是要用 Jekyll 的。
+
+
+### 调 IE6 兼容
+
+- 不要用 <header> 用 div.header
+- 不要用 svg 用 png
+- 不要用 :before 不支持
+- google material design 官网都不管 IE6 了
+- <meta http-equiv="X-UA-Compatible" content="IE=7,9,10,11" />
+- quirk mode: http://www.quirksmode.org/css/condcom.html
+  -   <!--[if lte IE 9]>
+      <span style="padding: 0 5px; float: left; color: white; font-weight: bold; line-height: 64px">>>></span>
+      <![endif]-->
+
+ -

@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <title>dc</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <link rel='stylesheet' id='google-fonts-css'  href='font.css' type='text/css' />
+  <link rel="stylesheet" href="css/main.css">
+</head>
+<body>
+  <div class="header">
+    <div class="container">
+      <a href="/dcity" class="home">
+        DigiCity
+      </a>
+      <!--[if lte IE 9]>
+      <span style="padding: 0 5px; float: left; color: white; font-weight: bold; line-height: 64px">>>></span>
+      <![endif]-->
+      <span class="chapter-title">
+        github 客户端
+      </span>
+     </div>
+   </div>
+   <div class="main container">
+     <div class="card">
+     <p>本文介绍如何在 window7 或 window8 系统上安装 github 客户端，并且用 github 客户端来操作 gitcafe.com 。没错，就是 gitcafe.com 。因为 github.com 在国内访问比较慢。</p>
+
+<h3 id="section">参考视频课程</h3>
+
+<p>《版本控制入门–搬进 Github》 <a href="http://www.imooc.com/learn/390">http://www.imooc.com/learn/390</a> 。</p>
+
+<h3 id="github-">安装 github 客户端</h3>
+
+<p>下载： <a href="http://windows.github.com">http://windows.github.com</a><br />
+安装过程就没有什么了。安装后，桌面上会有两个快捷方式，一个可以用来打开客户端的界面，一个可以打开 git shell 也就是 git 命令行。</p>
+
+<h3 id="github--github-">注册 github 账号，并用该账号登陆 github 客户端</h3>
+
+<p>需要注册一个 github.com 的账号，后面用来登陆 github 客户端。如果不登录，后续保存版本操作可能会失败，因为没有 user.name user.email 的设置。</p>
+
+<p>更新：有的同学登陆了，也会在客户端中保存版本失败，可以这样来解决：打开 github 命令行界面，执行</p>
+
+<div class="highlight"><pre><code class="language-console" data-lang="console">git config --global user.name "Your Name"
+git config --global user.email "yourname@yoursite.com"</code></pre></div>
+
+<h3 id="ssh-key-">不添加 ssh key 会有的错误</h3>
+
+<p>目的是达成本地机器和 gitcafe.com 服务器之间的互信。如果不做这一步，后面在运行 <code>git clone ...</code> 命令的时候，就会有下面这样的错误。</p>
+
+<p><img src="images/deny.png" alt="" /></p>
+
+<p>来解释一下上面图中的报错信息。<code>Permission Denied &lt;publickey&gt;</code> 的意思是“权限拒绝，公钥”，所谓 public key 就是指的后面我们要生成的 id_rsa.pub 这个文件。这个错误的原因是这个文件没有被添加到 gitcafe.com 上面，添加过程见下文。<code>please make sure you have the correct access right</code> 的意思是“请确保你拥有正确的访问权限”。</p>
+
+<p>当然，造成上面的错误也可能是 <code>git clone ...</code> 之后输入的项目地址不对。所以上面还有 <code>the repository exsits</code>，”请确保项目是存在的“，这样的字样。</p>
+
+<h3 id="ssh-key--1">添加 ssh key 的步骤</h3>
+
+<p>第一步是要来生成 ssh key 。</p>
+
+<p>打开 git 命令行，执行</p>
+
+<div class="highlight"><pre><code class="language-console" data-lang="console">$ ssh-keygen.exe</code></pre></div>
+
+<p>执行后会有两三个问题需要回答，不用回答，直接回车几次，就行了。这样，就在 C 盘-&gt; 用户 -&gt; Administrator.SC.20…. 位置，找到 .ssh  文件夹，可以看到里面多了两个文件。id_rsa.pub ，这个是 public key （公钥）。另一个是 id_rsa ，这个是 private key （私钥）。</p>
+
+<p>第二步，就是要把 id_rsa.pub 添加到 gitcafe.com 之上。</p>
+
+<p><img src="images/edit_profile.png" alt="" /></p>
+
+<p>到 gitcafe.com -&gt; edit profile （ 编辑个人信息 ) 就可以找到 SSH Keys 的链接了。用记事本打开 id_rsa.pub 中的内容，拷贝（注意末尾不要多拷贝一个换行）。然后粘贴到 gitcafe.com 上就添加完毕了。</p>
+
+<p><img src="images/add_key.png" alt="" /></p>
+
+<h3 id="gitcafecom-">克隆 gitcafe.com 上的项目到本地</h3>
+
+<p>如果能够克隆（类似于下载）成功，就表示上面的 ssh key 添加成功了。</p>
+
+<p>打开 git 命令行，这样默认的当前位置是 D 盘-&gt; 我的文档 -&gt; Github 文件夹里面，</p>
+
+<p>敲命令：</p>
+
+<div class="highlight"><pre><code class="language-console" data-lang="console">$ git clone git@gitcafe.com:yourname/yourproject.git</code></pre></div>
+
+<p>这样就可以把项目克隆到本地的 D 盘-&gt; 我的文档 -&gt; Github  文件夹里了。自己打开看一下吧，亲，看有没有多一个 yourproject 文件夹。</p>
+
+<h3 id="github--1">使用 github 客户端</h3>
+
+<p>到 github 客户端，点击左上角的加号，选择 add 这一项，找到 yourproject 这个文件夹，添加进来。这样，以后再往 xiaopeng 中添加新的文件夹或者图片都是可以的了。加完之后，到客户端中，先保存版本，然后 sync 一下就可以上传到 gitcafe.com/yourname/yourproject 这个项目中了。</p>
+
+<h3 id="section-1">可选技巧</h3>
+
+<p>上面在克隆项目的时候，如果你想要把项目克隆到桌面，可以遵循下面的步骤。</p>
+
+<ul>
+  <li>跳转到桌面 <code>cd C:\Users\Administrator\Desktop</code>
+    <ul>
+      <li>注意，也有的机器上是 <code>Administrator.SC...</code> 这个也没关系，这样输入</li>
+      <li>先敲 <code>cd C:\U</code> 然后敲 tab 键，就可以自动补齐成 <code>Users</code>，然后 <code>cd C:\Users\A</code> 再敲 tab 键</li>
+      <li>就可以补齐成 <code>Administrator</code> 或者是 <code>Administrator.SC...</code> 了</li>
+      <li>如果第一次补齐的是 <code>Administrator</code> 但是，我想要的是 <code>Administrator.SC...</code> 那个，那就再敲一次 tab</li>
+      <li>补齐成功之后，敲回车，进入桌面，然后继续下面的克隆操作</li>
+    </ul>
+  </li>
+</ul>
+
+     </div>
+   </div>
+</body>
+</html>
