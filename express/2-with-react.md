@@ -163,3 +163,11 @@ import axios from 'axios';
 
 我们当前的请求不希望是通过按钮来触发，而是希望，页面加载的时候，自动发出
 http 请求，向服务要数据，所以，代码非常适合写到生命周期函数中：
+
+```
+componentWillMount() {
+  axios.get('http://localhost:3000/').then(function(response){
+      return console.log(response);
+  })
+}
+```
