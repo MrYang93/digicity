@@ -34,7 +34,8 @@ Express 就是用来制作后台接口的，或者说叫制作后台 API 的。
 ```console
 mkdir express-hello
 cd express-hello
-npm init -
+npm init -y
+```
 
 这样文件夹内就会生成一个 package.json ，有了这个文件，我们这个文件夹就可以
 叫做一个 **Nodejs 项目** 了 。
@@ -224,73 +225,3 @@ http://localhost:3000/
 只能把字符串打印到后台。
 
 ### 前端和后端
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-后台框架
