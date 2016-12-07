@@ -7,7 +7,7 @@ title: JS 独孤求败
   <div class='wrapper-inside clearfix'>
     <div class='top-large'>
       <div class='book-title'>
-        《 JS 独孤求败》
+        JS 独孤求败
       </div>
       <div class='book-author'>
         <a href="https://github.com/happypeter">happypeter</a>
