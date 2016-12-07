@@ -116,7 +116,7 @@ module.exports = {
 
 index.html
 
-```
+```html
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -132,6 +132,7 @@ index.html
 </body>
 </html>
 ```
+
 ### 为何 state 要设置两次
 
 上面代码都是 React 的基础，我们不在重复，唯一可能感觉奇怪的是
@@ -158,14 +159,14 @@ npm install --save axios
 
 装包之后，就可以到 src/index.js 中去使用了，代码如下
 
-```
+```js
 import axios from 'axios';
 ```
 
 我们当前的请求不希望是通过按钮来触发，而是希望，页面加载的时候，自动发出
 http 请求，向服务要数据，所以，代码非常适合写到生命周期函数中：
 
-```
+```js
 componentWillMount() {
   axios.get('http://localhost:3000/').then(function(response){
       return console.log(response);
