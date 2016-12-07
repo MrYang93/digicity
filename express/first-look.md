@@ -13,8 +13,6 @@ Express 就是一个后台框架。
 一个框架，而且是 Nodejs 各种后台框架中最为通用，最为流行的一个，没有之一。所以学习 Nodejs
 最佳途径就是从 Express 入手。
 
-
-
 ### 你好，Express
 
 Express 的官网位置是 http://www.expressjs.com.cn/ 。官网上，首页最能吸引
@@ -130,7 +128,7 @@ JS 程序。
 
 但是，现在运行的效果，很不让人舒服，因为没有输出内容，解决这个问题，我们就可以把 app.listen 部分修改成下面这样：
 
-```
+```js
 app.listen(3000, function(){
   console.log('running on port 3000...');
 });
@@ -153,7 +151,7 @@ running on port 3000...
 
 一般格式如下：
 
-```
+```js
 app.listen(3000, function(){
 
 });
@@ -169,7 +167,7 @@ app.listen(3000, function(){
 
 比如，我们在上面的 index.js 中，app.listen 语句的上面，添加如下代码：
 
-```
+```js
 app.get('/', function(){
   console.log('request come in...');
 })
