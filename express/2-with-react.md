@@ -248,3 +248,20 @@ npm install --save cors
 ```
 
 再次提醒：这个包要安装到后台代码中。
+
+然后按照文档，添加下面两行代码，再重启服务器代码：
+
+```
+HTTP/1.1 200 OK
+X-Powered-By: Express
+Access-Control-Allow-Origin: *
+Content-Type: text/html; charset=utf-8
+Content-Length: 11
+ETag: W/"b-sQqNsWTgdUEFt6mb5y4/5Q"
+Date: Thu, 08 Dec 2016 02:17:23 GMT
+Connection: keep-alive
+```
+
+这样，我们就看到了 `Access-Control-Allow-Origin: *` 。
+
+浏览器中，刷新一下，可以看到后台返回的 response 数据了。错误没有了。
