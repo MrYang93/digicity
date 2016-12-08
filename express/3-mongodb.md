@@ -15,7 +15,7 @@ title: MongoDB 数据
 ### 安装
 
 https://www.mongodb.com/ 是 MongoDB 的官网。http://www.mongoing.com/ 是 MongoDB
-中文社区。
+中文社区。http://www.mongodb.org.cn/ 是 MongoDB 中文网。
 
 - MongoDB：是一个数据库软件，有时候我们简称它叫一个数据库，但是其实一个 MongoDB 运行起来
   可以里面同时运行多个数据库
