@@ -265,3 +265,68 @@ Connection: keep-alive
 这样，我们就看到了 `Access-Control-Allow-Origin: *` 。
 
 浏览器中，刷新一下，可以看到后台返回的 response 数据了。错误没有了。
+
+
+### 调整接口数据格式
+
+后台代码中，添加下面两个 API
+
+```
+app.get('/username', function(req, res){
+  res.json({"username": "happypeter"});
+})
+```
+
+对应，到前台代码中，调整 componentWillMount ，如下：
+
+```
+componentWillMount() {
+  axios.get('http://localhost:3000/username').then(function(response){
+      return console.log(response.data.username);
+  })
+}
+```
+
+这样，前台的 console 中，就可以看到返回数据
+
+```
+happypeter
+```
+
+
+下面进一步调整 componentWillMount 如下：
+
+```
+componentWillMount() {
+  axios.get('http://localhost:3000/username').then(function(response){
+      return this.setState({username: response.data.username});
+  })
+}
+```
+
+重新 build 代码，然后浏览器中运行，报错：
+
+```
+bundle.js:89 Uncaught (in promise) TypeError: Cannot read property 'setState' of undefined(…)(anonymous function) @ bundle.js:89
+```
+
+上面的错误，就意味着 `this` 没有被定义。这个是一个 JS 基础问题，跟 React 没有
+直接联系。相关知识，需要理解 `bind(this)` 才能透彻理解这个问题。
+
+bind(this) 的视频: http://haoqicat.com/o-o-js/2-2-this
+
+这里呢，我们直接给出解决方法，就是使用 ES6 的箭头函数：
+
+```
+componentWillMount() {
+  axios.get('http://localhost:3000/username').then((response) => {
+      this.setState({username: response.data.username});
+  })
+}
+```
+
+
+### 总结
+
+至此，前台页面上成功显示出了，后台的数据。这样，一个前后分离机构，通过 API 通信的应用的 Hello
+World 就完成了。
