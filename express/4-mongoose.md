@@ -46,7 +46,7 @@ mongoose.connect('mongodb://localhost:27017/digicity');
 
 然后添加下面代码
 
-```
+```js
 var db = mongoose.connection;
 db.on('error', console.log);
 db.once('open', function() {
@@ -57,7 +57,7 @@ db.once('open', function() {
 如果连接数据库成功，就打印 `success` 。`once('open')` 的意思就是
 "一旦打开成功" 。如果数据库没有启动，是看不到 `success` 的。
 
-###　创建数据 model
+### 创建数据 model
 
 创建一个专门的　models/user.js ，里面代码的作用是，实现一个对象跟一个
 数据集合之间映射关系。
@@ -81,7 +81,7 @@ module.exports = mongoose.model('User', UserSchema);
 首先创建了一个　Schema （概要），Schema 就是用来描述这个集合中每个文档
 的数据结构，具体来讲就是
 
--　有那几个字段（　filed ）？我们这里有两个　`username` 和　`email`
+- 有那几个字段（　filed ）？我们这里有两个　`username` 和　`email`
 - 每个字段的类型
 
 这样，映射关系就建立完毕。
