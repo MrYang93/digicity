@@ -107,3 +107,141 @@ WriteResult({ "nInserted" : 1 })
 ```
 db.users.find({})
 ```
+
+### 对数据记录进行增删改查
+
+第一步，增。
+
+```
+> db.users.insert({username: 'billie', email: 'billie@billie.com'})
+```
+
+第二步，改。
+
+代码中比较推荐用 save ，不推荐 update。
+
+```
+ db.users.update({_id: ObjectId("584b62b830a2a2cbf4c4c3f6")}, {username: "billie66", email:"billie@billie.com"})
+```
+
+update 接口中有两个参考，第一个是查询条件，用来定位要更新的是哪一个文档，后面是更新后的数据。
+
+
+第三步，查。
+
+```
+db.users.find({})
+```
+
+可以列出所有的 users 集合中的文档。
+
+
+第四步，删。
+
+删除特定一个文档：
+
+```
+> db.users.remove({_id:  ObjectId("584b5dbf30a2a2cbf4c4c3f5")})
+WriteResult({ "nRemoved" : 1 })
+```
+
+删除集合中所有文档：
+
+```
+> db.users.remove({})
+```
+
+
+mongo shell 中的基本操作我们就介绍到这里。但是，我们发现敲命令比较麻烦，所以，可以考虑
+使用图形化的界面来操作 MongoDB 。
+
+### 图形化的操作界面 mongo-express
+
+Mongo-express 是一个用 express 技术开发的，MongoDB 的　GUI (图形界面)　。可以方便美观的
+操作 MongoDB 中的数据。
+
+参考：http://haoqicat.com/hand-in-hand-react/4-mongo-express
+
+一般系统上的工具，我们用全局安装就可以
+
+```
+npm install -g mongo-express
+```
+
+mongo-express 装好之后，我们需要通知它，到底要连接到哪个数据库。这个是通过，修改
+mongo-express 的配置文件来搞定的。
+
+所以首先第一步，我们先要找到　mongo-express 的配置文件。
+
+```
+$ npm list -g mongo-express
+/home/peter/.nvm/versions/node/v7.1.0/lib
+```
+
+找到安装位置后，就可以进入安装文件夹，来修改配置文件了。
+
+```
+cd /home/peter/.nvm/versions/node/v7.1.0/lib
+cd node_modules
+cd mongo-express
+cp config.default.js config.js
+```
+
+最后一步，就是把*假配置文件* ，改名为真的　config.js , 也就是说是程序真正会读到的配置文件。
+
+打开配置文件，把
+
+```
+mongo = {
+  db:       'db',
+  ...
+  url:      'mongodb://localhost:27017/db',
+};
+```
+
+改为
+
+```
+mongo = {
+  db:       'digicity',
+  ...
+  url:      'mongodb://localhost:27017/digicity',
+};
+```
+
+上面的　`digicity` 就是我们要操作的数据库的名字，这个是通过　mongo shell 中，执行
+
+```
+show dbs
+```
+
+看到的。
+
+同时，mongo-express 的密码有默认值，通过　config.js 中这几行：
+
+```
+basicAuth: {
+  username: process.env.ME_CONFIG_BASICAUTH_USERNAME || 'admin',
+  password: process.env.ME_CONFIG_BASICAUTH_PASSWORD || 'pass',
+},
+```
+
+用户名是　`admin` ，密码是　`pass` 。
+
+启动　mongo-express 需要开启一个新的命令行标签。然后输入
+
+```
+$ mongo-express
+```
+
+在深度 Linux 上，输出如下
+
+```
+Mongo Express server listening at http://localhost:8081
+basicAuth credentials are "admin:pass", it is recommended you change this in your config.js!
+Connecting to digicity...
+{ MongoError: Authentication failed.
+```
+
+虽然上面有一个　`MongoError` 但是，浏览器中打开：　 http://localhost:8081 还是可以正确使用
+mongo-express 的。
