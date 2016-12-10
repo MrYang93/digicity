@@ -81,7 +81,7 @@ module.exports = mongoose.model('User', UserSchema);
 首先创建了一个　Schema （概要），Schema 就是用来描述这个集合中每个文档
 的数据结构，具体来讲就是
 
-- 有那几个字段（　filed ）？我们这里有两个　`username` 和　`email`
+- 有那几个字段（　field ）？我们这里有两个　`username` 和　`email`
 - 每个字段的类型
 
 这样，映射关系就建立完毕。
