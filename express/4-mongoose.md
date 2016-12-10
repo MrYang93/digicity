@@ -104,8 +104,87 @@ db.once('open', function() {
 
 强调：｀User` 对应　users 集合，她本身是　models/user.js 中导出的一个
 model 。所以说　User 就是一个空盒子。而小写的　｀user` 是　`new User`
-得到的一个对象，`user` 对应一个实际的文档，所以小写的　`user` 中会真
+得到的一个对象，对应一个实际的文档，所以其中会真
 正保存一个用户的实际　username 和 email 数据。
 
 `user.save` 就是把　`user` 中已经有的数据（在内存中），真正保存到　MongoDB
 数据库中（保存到硬盘上）。
+
+
+
+
+### 代码
+
+index.js 如下
+
+```js
+const express =  require('express');
+const app = express();
+const cors = require('cors');
+app.use(cors());
+const mongoose = require('mongoose');
+const User = require('./models/user');
+
+mongoose.connect('mongodb://localhost:27017/digicity');
+// 执行此行代码之前，要保证 mongodb 数据库已经运行了，而且运行在 27017 端口
+
+var db = mongoose.connection;
+db.on('error', console.log);
+db.once('open', function() {
+   let user = new User({username: 'inCode', email: 'inCode@incode.com'});
+   user.save(function(err){
+     if(err) console.log(err);
+   })
+  console.log('success!')
+});
+
+
+// 下面三行就是我们实现的一个 API
+app.get('/username', function(req, res){
+  res.json({"username": "happypeter"});
+})
+
+app.listen(3000, function(){
+  console.log('running on port 3000...');
+});
+```
+
+models/user.js
+
+```js
+var mongoose = require('mongoose');
+var Schema = mongoose.Schema;
+
+const UserSchema = new Schema(
+  {
+    username: { type: String },
+    email: { type: String }
+  }
+);
+module.exports = mongoose.model('User', UserSchema);
+// `User` 会自动对应数据库中的　users 这个集合
+// 如果这里是　Apple 那么就会对应　apples 集合
+// 如果这里是　Person 那么就会对应　people 集合
+```
+
+package.json 如下
+
+```json
+{
+  "name": "express-hello",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "cors": "^2.8.1",
+    "express": "^4.14.0",
+    "mongoose": "^4.7.2"
+  }
+}
+```
