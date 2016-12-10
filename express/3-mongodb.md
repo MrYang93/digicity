@@ -248,3 +248,9 @@ Connecting to digicity...
 
 虽然上面有一个　`MongoError` 但是，浏览器中打开：　 http://localhost:8081 可以开始使用
 mongo-express 了。
+
+
+### 总结
+
+上面。我们分别用 Mongo Shell 和　mongo-express 两种方式，对　mongodb 数据库进行了操作。
+但是，最重要的一种操作　mongodb　的形式我们还没有介绍。这就是用　JS　来操作　mongodb 。
