@@ -194,6 +194,8 @@ cp config.default.js config.js
 ```
 mongo = {
   db:       'db',
+  username: 'admin',
+  password: 'pass',
   ...
   url:      'mongodb://localhost:27017/db',
 };
@@ -204,6 +206,8 @@ mongo = {
 ```
 mongo = {
   db:       'digicity',
+  username: '',
+  password: '',
   ...
   url:      'mongodb://localhost:27017/digicity',
 };
@@ -240,8 +244,7 @@ $ mongo-express
 Mongo Express server listening at http://localhost:8081
 basicAuth credentials are "admin:pass", it is recommended you change this in your config.js!
 Connecting to digicity...
-{ MongoError: Authentication failed.
 ```
 
-虽然上面有一个　`MongoError` 但是，浏览器中打开：　 http://localhost:8081 还是可以正确使用
-mongo-express 的。
+虽然上面有一个　`MongoError` 但是，浏览器中打开：　 http://localhost:8081 可以开始使用
+mongo-express 了。
