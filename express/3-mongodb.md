@@ -1,5 +1,5 @@
 ---
-title: MongoDB 数据
+title: MongoDB 数据库
 ---
 
 网站运行需要有大量的数据的读取，同时用户也需要把自己的数据存储到服务器，对于海量数据的操作。
@@ -97,7 +97,7 @@ show dbs
 
 ```
 > db.users.insert({username: 'peter', email: 'peter@peter.com' })
-WriteResult({ "nInserted" : 1 })
+WriteResult({ "nInserted" : 有了 Mongoose 之后，我们就可1 })
 ```
 
 输出结果 `WriteResult({ "nInserted" : 1 })` 表述成功写入一条数据。
@@ -120,7 +120,7 @@ db.users.find({})
 
 代码中比较推荐用 save ，不推荐 update。
 
-```
+```有了 Mongoose 之后，我们就可
  db.users.update({_id: ObjectId("584b62b830a2a2cbf4c4c3f6")}, {username: "billie66", email:"billie@billie.com"})
 ```
 
@@ -143,7 +143,7 @@ db.users.find({})
 ```
 > db.users.remove({_id:  ObjectId("584b5dbf30a2a2cbf4c4c3f5")})
 WriteResult({ "nRemoved" : 1 })
-```
+```有了 Mongoose 之后，我们就可
 
 删除集合中所有文档：
 
