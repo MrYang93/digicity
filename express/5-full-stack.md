@@ -218,3 +218,181 @@ componentWillMount() {
   })
 }
 ```
+
+这样，就可以看出　response 中的数据结构了，我们想要的数据可以这样拿到
+
+
+```js
+constructor(){
+  super();
+  this.state = {
+    users: []
+  };
+}
+componentWillMount() {
+  axios.get('http://localhost:3000/users').then((response) => {
+      this.setState({users: response.data.users});
+  })
+}
+```
+
+但是，如果在　render 函数中，我们这样写
+
+```
+render(){
+  return(
+    <div>
+      {this.state.users}
+    </div>
+  )
+}
+```
+
+就会触发下面的错误：
+
+```
+bundle.js:894 Uncaught (in promise) Error: Objects are not valid as a React child (found: object with keys {_id, username, email}). If you meant to render a collection of children, use an array instead or wrap the object using createFragment(object) from the React add-ons. Check the render method of `App`.(…)
+```
+
+报错信息的大致意思是：对象不是被允许的　React 子元素。
+
+解决方式，看下一小部分。
+
+###　使用　map 展开数组
+
+我们可以使用　ES6 自带的　map 来完成该任务。也可以加载　lodash 的　map 方法。
+
+小贴士：什么是　lodash ?
+lodash 是一个　JS 的库，它里面提供了很多　JS 的基础方法，方便使用　JS 语言。
+使用　lodash 是写　JS 代码的标配。
+小贴士结束
+
+安装　lodash
+
+```
+npm i --save lodash
+```
+
+然后，到　index.js 中导入一下
+
+```js
+import map from 'lodash/fp/map';
+```
+
+
+render 函数做如下调整：
+
+```js
+render(){
+  const userList = map((user) => {
+    return (
+      <div key={user._id}>
+        {user.username}
+      </div>
+    )
+  }, this.state.users);
+
+  return(
+    <div>
+      { userList }
+    </div>
+  )
+}
+```
+
+这样，页面中就可以显示出所有用户的用户名的列表了。
+
+
+### 前台代码
+
+src/index.js
+
+```js
+import React, { Component } from 'react';
+import ReactDOM from 'react-dom';
+import axios from 'axios';
+import map from 'lodash/fp/map';
+
+
+class App extends Component {
+  constructor(){
+    super();
+    this.state = {
+      users: []
+    };
+  }
+  componentWillMount() {
+    axios.get('http://localhost:3000/users').then((response) => {
+      // console.log(response);
+      this.setState({users: response.data.users});
+    })
+  }
+  render(){
+    const userList = map((user) => {
+      return (
+        <div key={user._id}>
+          {user.username}
+        </div>
+      )
+    }, this.state.users);
+
+    return(
+      <div>
+        { userList }
+      </div>
+    )
+  }
+}
+
+ReactDOM.render(<App/>,document.getElementById('app'));
+```
+
+webpack.config.js 如下：
+
+```
+var path = require('path');
+
+module.exports = {
+  entry: path.resolve(__dirname, 'src/index.js'),
+  output: {
+    path: path.resolve(__dirname, 'build'),
+    filename: 'bundle.js'
+  },
+  module: {
+    loaders: [
+      {
+        test: /\.js$/,
+        loader: 'babel-loader'
+      }
+    ]
+  }
+};
+```
+
+.babelrc 如下
+
+```
+{
+  "presets": ["es2015", "react", "stage-0"],
+  "plugins": []
+}
+```
+
+index.html 如下：
+
+```
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+</head>
+<body>
+
+  <div id="app"></div>
+  <script src="./build/bundle.js" charset="utf-8"></script>
+</body>
+</html>
+```
