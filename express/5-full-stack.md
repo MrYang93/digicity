@@ -124,7 +124,7 @@ $ curl -X GET http://localhost:3000/users
 
 这样，后台代码就准备完毕。
 
-###　后台代码
+### 后台代码
 
 express-hello 文件夹中，有下面的文件：
 
@@ -221,7 +221,7 @@ componentWillMount() {
 
 这样，就可以看出　response 中的数据结构了，我们想要的数据可以这样拿到
 
-
+ie6ie6ie6
 ```js
 constructor(){
   super();
@@ -234,7 +234,7 @@ componentWillMount() {
       this.setState({users: response.data.users});
   })
 }
-```
+```ie6ie6
 
 但是，如果在　render 函数中，我们这样写
 
@@ -278,7 +278,7 @@ npm i --save lodash
 ```js
 import map from 'lodash/fp/map';
 ```
-
+ie6
 
 render 函数做如下调整：
 
