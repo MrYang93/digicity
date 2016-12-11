@@ -94,3 +94,23 @@ app.get('/users', function(req, res){
 ```
 curl -X GET http://localhost:3000/users
 ```
+
+但是，此时，curl 请求不到任何返回信息，因为　`console.log(users)` 只会把
+信息打印到后台终端。curl 请求不到信息，未来浏览器也就请求不到。所以要把这一行
+改为
+
+```js
+// res.send() 可以数据返回给客户端，但是我们要的是　json ，所以用下面接口
+res.json()
+```
+
+也就是要写成这样：
+
+```js
+app.get('/users', function(req, res){
+  // res.json({"users": "happypeter"});
+  User.find().exec(function(err, users) {
+    res.json({users});
+  });
+})
+```
