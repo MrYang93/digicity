@@ -24,12 +24,73 @@ mongodb 中是否有多个用户。
 
 参考：http://haoqicat.com/react-express-api/5-rest-api
 
-
+修改代码如下：
 
 ```
 db.once('open', function() {
-  User.find().exec(function(err, posts) {
-    console.log(posts);
+  User.find().exec(function(err, users) {
+    console.log(users);
   });
 });
+```
+
+这样，我们到　express-hello 文件夹中，运行，可以看到如下输出结果
+
+
+```
+$ node index.js
+running on port 3000...
+[ { _id: 584b62b830a2a2cbf4c4c3f6,
+    username: 'billie66',
+    email: 'billie@billie66.com' },
+  { _id: 584bb045ff8f0f1c7ba4fe24,
+    username: 'inCode',
+    email: 'inCode@incode.com',
+    __v: 0 } ]
+```
+
+可以看到，终端中可以打印出所有数据文档。证明我们的　mongoose 的　find() 接口
+使用正确。
+
+但是，我们为何不把代码写成这样呢？
+
+```
+let users = User.find();
+conole.log(users)
+```
+
+答案是：　find() 接口是一个**异步函数**，所以它的返回值　`users` 只能
+在回调函数中使用。`.exec` 字面意思就是**执行**，我们把回调函数穿给它做参数。
+
+关于**同步**和**异步** 后面我们开专题再讲。
+
+### 用 API 来返回　JSON
+
+上面数据虽然拿到，但是如果想提供给客户端使用：
+
+- 第一步，把它要封装成一个　API
+- 第二步，数据格式转换为　JSON
+
+先来做第一步，代码做出如下调整：
+
+```
+db.once('open', function() {
+  console.log('success');
+});
+
+app.get('/users', function(req, res){
+  User.find().exec(function(err, users) {
+    console.log(users);
+  });
+})
+```
+
+上面把　User.find() 代码封装到了一个　API ( Web API ) 。这样，
+触发条件就变了。只有当客户端发出　`GET /users` 请求的时候，User.find()
+代码才会被执行。
+
+暂时，我们用　curl 来模拟一下客户端请求：
+
+```
+curl -X GET http://localhost:3000/users
 ```
