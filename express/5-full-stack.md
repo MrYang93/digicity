@@ -114,3 +114,107 @@ app.get('/users', function(req, res){
   });
 })
 ```
+
+这样，再用　curl 请求一下，前台就能读到数据了，如下
+
+```
+$ curl -X GET http://localhost:3000/users
+{"users":[{"_id":"584b62b830a2a2cbf4c4c3f6","username":"billie66","email":"billie@billie66.com"},{"_id":"584b760498d7b520b68a05cd","username":"pppaaa"},{"_id":"584bb045ff8f0f1c7ba4fe24","username":"inCode","email":"inCode@incode.com","__v":0}]}
+```
+
+这样，后台代码就准备完毕。
+
+###　后台代码
+
+express-hello 文件夹中，有下面的文件：
+
+index.js
+
+```js
+const express =  require('express');
+const app = express();
+const cors = require('cors');
+app.use(cors());
+const mongoose = require('mongoose');
+const User = require('./models/user');
+
+mongoose.Promise = global.Promise;
+mongoose.connect('mongodb://localhost:27017/digicity');
+// 执行此行代码之前，要保证 mongodb 数据库已经运行了，而且运行在 27017 端口
+
+
+
+var db = mongoose.connection;
+db.on('error', console.log);
+db.once('open', function() {
+  console.log('success');
+});
+
+
+// 下面三行就是我们实现的一个 API
+app.get('/users', function(req, res){
+  // res.json({"users": "happypeter"});
+  User.find().exec(function(err, users) {
+    res.json({users});
+  });
+})
+
+
+app.listen(3000, function(){
+  console.log('running on port 3000...');
+});
+```
+
+models/user.js
+
+```js
+var mongoose = require('mongoose');
+var Schema = mongoose.Schema;
+
+const UserSchema = new Schema(
+  {
+    username: { type: String },
+    email: { type: String }
+  }
+);
+module.exports = mongoose.model('User', UserSchema);
+// `User` 会自动对应数据库中的　users 这个集合
+// 如果这里是　Apple 那么就会对应　apples 集合
+// 如果这里是　Person 那么就会对应　people 集合
+```
+
+package.json
+
+```json
+{
+  "name": "express-hello",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "cors": "^2.8.1",
+    "express": "^4.14.0",
+    "mongoose": "^4.7.2"
+  }
+}
+```
+
+
+### 前台书写　axios 请求
+
+到　react-with-express/　也就前台项目中，修改生命周期函数如下：
+
+```js
+componentWillMount() {
+  axios.get('http://localhost:3000/users').then((response) => {
+    console.log(response);
+      // this.setState({username: response.data.username});
+  })
+}
+```
