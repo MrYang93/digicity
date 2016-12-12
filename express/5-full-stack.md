@@ -234,7 +234,7 @@ componentWillMount() {
       this.setState({users: response.data.users});
   })
 }
-```ie6ie6
+```
 
 但是，如果在　render 函数中，我们这样写
 
@@ -278,7 +278,7 @@ npm i --save lodash
 ```js
 import map from 'lodash/fp/map';
 ```
-ie6
+
 
 render 函数做如下调整：
 
