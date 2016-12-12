@@ -258,7 +258,7 @@ bundle.js:894 Uncaught (in promise) Error: Objects are not valid as a React chil
 
 解决方式，看下一小部分。
 
-###　使用　map 展开数组
+### 使用 map 展开数组
 
 我们可以使用　ES6 自带的　map 来完成该任务。也可以加载　lodash 的　map 方法。
 
