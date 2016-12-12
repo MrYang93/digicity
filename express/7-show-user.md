@@ -93,9 +93,8 @@ db.once('open', function() {
 // 下面三行就是我们实现的一个 API
 app.get('/users/:id', function(req, res){
   User.findById(req.params.id,function (err,user) {
-    if(err) return console.log(err);
     console.log(user);
-    res.json({user})
+    res.json(user)
   })
 })
 
@@ -144,4 +143,5 @@ package.json
 
 ### 总结
 
-这样，前台打开 index.html 文件，点一下 clickme ，
+这样，前台打开 index.html 文件，点一下 clickme ，就可以在页面上
+显示出从后台 mongodb 中取出的用户的 username 了。
