@@ -396,15 +396,3 @@ index.html 如下：
 </body>
 </html>
 ```
-
-### 后台增加请求一位用户信息的API
-
-app.get('/users/:_id', function(req, res){
-  User.findById(req.params._id,function (err,user) {
-    if(err) return console.log(err);
-    // console.log(user);
-    res.send({user})
-  })
-})
-
-这里通过 `findById` 这个方法去查找用户信息
