@@ -221,7 +221,7 @@ componentWillMount() {
 
 这样，就可以看出　response 中的数据结构了，我们想要的数据可以这样拿到
 
-ie6ie6ie6
+
 ```js
 constructor(){
   super();
