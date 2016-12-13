@@ -1,31 +1,16 @@
 ---
-title: 展示一个可以查看详情用户的列表
+title: 项目
 ---
 
-本节主要是动手，做出一个用户列表，列表上的每一项都可以点开，查看详情。
+http://happypeter.coding.me/
+ - https://github.com/happypeter/big-demo
 
-### 第一步，先做带链接的用户列表
+very interesting
 
-链接中包含该用户的 id ，链接指向的页面先不做。前台最后生成的内容如下：
 
-```
-<a href="/users/xxxxxxx">peter</a>
-<a href="/users/xxxxxxx">billie</a>
-...
-```
+https://github.com/happypeter/digicity 这里的内容总结一下看能不能出个课程
+然后最好删除掉。
 
-要求：大家前台全部把服务器都停下，用 index.html 一个静态文件，导入 bundle.js 就可以。
-另外，前面我们使用 a 标签，而不用 react-router 的 Link 也是有意的。后续我们会随着需要的
-功能的增加来逐步看一下：
-
-- 第一，前台为何要在运行的时候，也启动自己服务器?
-- 第二，Link 比 a 到底好在哪里？
-
-第一个问题，因为我们要用到 react-router ，它要想正常运行，需要一个简单的 express 后台路由服务的支撑。
-
-第二个问题，我们用 React 开发的应用，叫做**单页面应用** ，也就是说，整个网站只有一个页面。
-换句话说，就是，整个网站做跳转的时候，没有刷新。使用 Link 就可以达成无刷新的链接。而使用　a
-标签，页面是会刷新的，所以一般不用。
 
 
 ### 补充技巧：如何拿到非默认分支的代码
