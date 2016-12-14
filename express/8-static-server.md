@@ -57,7 +57,7 @@ mv index.html public/
 node server.js
 ```
 
-
+就能正确的看到 localhost:3000/ 可以访问 index.js 了。
 
 
 

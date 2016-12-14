@@ -134,6 +134,53 @@ app.listen(3000, function(err) {
 
 上面的详细讲解，参考 [express 部分的第八小节](../express/8-static-server.html) 。
 
+
+### Link 调用路由
+
+代码如下：
+
+```js
+import { Router, Route, browserHistory, Link } from 'react-router';
+
+
+class App extends Component {
+  render(){
+    return(
+      <div>
+        <Link to='/hello1'>Hello1</Link>
+        <Link to='/hello2'>Hello2</Link>
+      </div>
+...
+```
+
+这样，代码就完整了。最终代码参考本页，最后一部分，《代码》。
+
+
+### 如何运行
+
+
+第一步，编译生成 bundle.js
+
+```
+npm run build
+```
+
+这样，会通过 webpack 调用 babel 来对源码进行编译。编程完成之后，源码就不需要了。
+
+第二步，架设服务器
+
+```
+mkdir -p tmp/public
+cp index.html tmp/public
+cp server.js tmp/
+cp build/bundle.js tmp/public/
+cd tmp
+node server.js
+```
+
+这样，浏览器中，访问 localhost:3000 就可以看到最终运行效果了。
+
+
 ### 代码
 
 server.js
