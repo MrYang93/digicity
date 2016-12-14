@@ -1,6 +1,94 @@
 ---
-title: 基本 React 项目搭建
+title: 基本 Webpack React 项目搭建
 ---
+
+这一集来跑一个 React 的 Hello World ，但是重点我们看一下一个最简的
+webpack 配置是怎么样的。
+
+
+### 最简单的 Webpack 配置文件
+
+
+webpack.config.js
+
+```js
+var path = require('path');
+// path 是 nodejs 自带的一个包，所以不用安装，直接使用
+// 用来完成*路径*相关操作
+
+module.exports = {
+  entry: path.resolve(__dirname, 'src/index.js'),
+  output: {
+    path: path.resolve(__dirname, 'build'),
+    filename: 'bundle.js'
+  },
+  module: {
+    loaders: [
+      {
+        test: /\.js$/,
+        loader: 'babel-loader'
+      }
+    ]
+  }
+};
+```
+
+
+### 先说文件名
+
+文件名 webpack.config.js 是默认加载文件名，这样，我们在这个文件的当前位置，运行
+
+```
+webpack
+```
+
+就等价于，运行
+
+```
+webpack --config webpack.config.js
+```
+
+如果文件名改为 webpack.config.dev.js 那么 webpack 默认就不能自动加载了，
+而需要手动指定。
+
+### 一句话说明上面文件的作用
+
+项目是 React 项目，所以项目代码中有 ES6 和 JSX 语法都是浏览器不能直接运行的，所以项目需要先编译后运行。上面的配置文件的作用，一句话概括：
+
+>用 babel 把入口文件 index.js 编译成 bundle.js
+
+详细来说，完成了下面几个小任务：
+
+- 编译 JSX 成原生 JS
+- 编译 ES6 成原生 JS
+- 把 index.js 引领的多个 ES6 模块文件，打包成一个 bundle.js
+
+注意：Webpack 已经不仅仅是一个打包器了，它已经发展成一个强大的 build tool
+构建工具，里面可以融入大量辅助开发的插件。所以通常我们就是把 babel 作为 Webpack 的功能之一来使用。
+
+### 添加 Webpack 插件的形式
+
+用 loader 的形式来添加。比如我想给 Webpack 添加 babel 功能。bable 自己是
+一个独立的工具，所以要通过　babel-loader 做媒人，也就是下面代码的由来
+
+```
+loader: 'babel-loader'
+```
+
+包括我们看　package.json 中，也安装了这个包。
+但是只有　babel-loader 是不够的，还需要有　babel 本身，
+package.json 中的这几个包
+
+```json
+"babel-core": "^6.10.4",,
+"babel-preset-es2015": "^6.9.0",
+"babel-preset-react": "^6.11.1",
+"babel-preset-stage-0": "^6.5.0",
+```
+
+都是　babel 工具本身，可以说跟　webpack 没关系，包括　.babelrc 文件，
+也可以说跟　webpack 没啥关系。
+
 
 
 ### 新建　React 项目
