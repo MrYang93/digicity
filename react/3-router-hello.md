@@ -57,6 +57,8 @@ ReactDOM.render(renderRoutes(), document.getElementById('app'));
 Uncaught TypeError: Cannot read property 'getCurrentLocation' of undefined
 ```
 
+报错是和获取以及修改，地址栏中的 url 有关系
+
 解决方法：
 
 ```diff
@@ -64,7 +66,70 @@ Uncaught TypeError: Cannot read property 'getCurrentLocation' of undefined
 +++ <Router history={browserHistory} >
 ```
 
+### 浏览器自带的 history 接口
 
+
+对于单页面应用，我们必然涉及到，如何用 js 修改地址栏链接的问题，
+而，浏览器自带的 [history](https://developer.mozilla.org/en-US/docs/Web/API/History_API#The_pushState()_method)
+```
+var stateObj = { foo: "bar" };
+history.pushState(stateObj, "page 2", "/");
+undefined
+var stateObj = { foo: "bar" };
+history.pushState(stateObj, "page 2", "/about");
+```
+
+>小贴士：查询 H5/JS/CSS3 的接口文档，最权威的地方就是 MDN
+> https://developer.mozilla.org/
+
+
+但是，有了 react-router 我们就可以通过
+
+```
+<Router history={browserHistory}>
+```
+
+来使用浏览器原生的 history 接口了。
+
+
+### 需要启动服务器了
+
+添加了 `history={browserHistory}` 之后，浏览器 console 的报错是
+
+```
+bundle.js:22749 Warning: [react-router] Location "/home/newming/%E6%A1%8C%E9%9D%A2/peter/router-hello/index.html" did not match any routes
+```
+
+这个报错的意思是：我们访问 `/index.html` 但是，我们的路由定义中，根本
+没有定义这个路由（ Route ）。
+
+解决这个问题，我们就要把项目（index.html 和 bundle.js，源码文件都不包含在内）运行在服务器之上。
+
+服务器有多种，最著名的有 apache/nginx ，但是我们现在用 express 自己写
+一个服务器。
+
+代码如下：
+
+server.js
+
+```js
+var express = require('express');
+var app = express();
+
+app.use(express.static('public'));
+// 用跟本文件平级的一个 public 夹作为静态文件的存放位置
+// 没有这一行，后面 sendFile 的 index.html 就找不到了。
+
+app.get('/', function(req, res){
+  res.sendFile('index.html');
+});
+
+app.listen(3000, function(err) {
+  console.log('Listening at http://localhost:3000');
+});
+```
+
+上面的详细讲解，参考 [express 部分的第八小节](../express/8-static-server.html) 。
 
 ### 代码
 
