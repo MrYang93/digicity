@@ -57,6 +57,13 @@ ReactDOM.render(renderRoutes(), document.getElementById('app'));
 Uncaught TypeError: Cannot read property 'getCurrentLocation' of undefined
 ```
 
+解决方法：
+
+```diff
+--- <Router>
++++ <Router history={browserHistory} >
+```
+
 
 
 ### 代码
