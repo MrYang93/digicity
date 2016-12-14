@@ -89,6 +89,95 @@ package.json 中的这几个包
 都是　babel 工具本身，可以说跟　webpack 没关系，包括　.babelrc 文件，
 也可以说跟　webpack 没啥关系。
 
+### 运行　webpack
+
+运行　webpack 的目的就是把　index.js 编译成　bundle.js　，直观上
+可以这样操作：
+
+```
+cd project/
+webpack
+```
+
+这样，如果　webpack.config.js 在　project 顶级位置，那么默认就可以加载。
+
+大部分同学　webpack 都是局部安装的，也就是安装到了　project/node_modules
+文件夹内，所以运行　webpack 命令会报　`Command Not Found` ，意思是没有 webpack 这个命令。
+解决方法是，运行
+
+```
+cd project/
+./node_modules/.bin/webpack
+```
+就可以执行了。但是每次敲这个路径太麻烦，所以，我们就把它添加到 package.json 中，
+形成一个 npm 脚本（ script ）。具体就是在 package.json 中添加：
+
+```
+"scripts": {
+  "build": " ./node_modules/.bin/webpack"
+},
+```
+
+但是，package.json 有个特点，就是凡是局部安装的命令，例如这里的 webpack ，可以直接找到
+所以最终，写成这样就可以了
+
+
+```
+"scripts": {
+  "build": "webpack"
+},
+```
+
+真正每次要执行编译任务的时候：
+
+```
+npm run build
+```
+
+就可以得到最终输出 bundle.js 了。
+
+
+### 补充知识： NPM script
+
+有些命令比较长，我们想给它起一个简单的外号（别名），便于手敲。设置的位置
+就是在　package.json 文件的　script （脚本）这一部分。所以这个知识点
+叫做　NPM Script 。
+
+
+比如我们有这样一个命令：
+
+```
+webpack --config webpack.config.dev.js
+```
+
+这个命令太长，现在我们可以把它写到　package.json 之中
+
+```
+"scripts": {
+  "build": "webpack --config webpack.config.dev.js"
+},
+```
+
+这样，每次我想执行上面这个命令的时候，只需要
+
+```
+cd project
+npm run build
+```
+
+注意，上面的 run 是必须要加的。但是如果有下面的代码
+
+"scripts": {
+  "start": "node devServer.js"
+},
+
+由于 start 是特殊名字，执行命令，我们可以用
+
+```
+npm run start
+```
+
+但是页可以省略 run 。
 
 
 ### 新建　React 项目
@@ -133,7 +222,7 @@ package.json
   "description": "",
   "main": "index.js",
   "scripts": {
-    "build": " ./node_modules/.bin/webpack"
+    "build": "webpack"
   },
   "author": "",
   "license": "ISC",
@@ -195,45 +284,3 @@ index.html
 ```
 
 有了上面的代码，浏览器中打开　index.html ，可以看到　hello 字样。
-
-### 补充知识： NPM script
-
-有些命令比较长，我们想给它起一个简单的外号（别名），便于手敲。设置的位置
-就是在　package.json 文件的　script （脚本）这一部分。所以这个知识点
-叫做　NPM Script 。
-
-
-比如我们有这样一个命令：
-
-```
-webpack --config webpack.config.dev.js
-```
-
-这个命令太长，现在我们可以把它写到　package.json 之中
-
-```
-"scripts": {
-  "build": "webpack --config webpack.config.dev.js"
-},
-```
-
-这样，每次我想执行上面这个命令的时候，只需要
-
-```
-cd project
-npm run build
-```
-
-注意，上面的 run 是必须要加的。但是如果有下面的代码
-
-"scripts": {
-  "start": "node devServer.js"
-},
-
-由于 start 是特殊名字，执行命令，我们可以用
-
-```
-npm run start
-```
-
-但是页可以省略 run 。
