@@ -27,12 +27,12 @@ Router 就是路由器，Route 就是具体的一个路由，browserHistory 和 
 
 ### 定义路由
 
-规定一下每个链接形式都，都指向执行哪个具体组件。基本格式就是
+规定一下每个链接形式指向哪个组件。基本格式就是
 
 ```
 <Router>
-  <Route url component />
-  <Route url component/>
+  <Route path component />
+  <Route path component/>
 </Router>
 ```
 
