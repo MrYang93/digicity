@@ -71,6 +71,9 @@ Uncaught TypeError: Cannot read property 'getCurrentLocation' of undefined
 
 对于单页面应用，我们必然涉及到，如何用 js 修改地址栏链接的问题，
 而，浏览器自带的 [history](https://developer.mozilla.org/en-US/docs/Web/API/History_API#The_pushState()_method)
+
+可以在 chrome console 中执行下面的代码看看效果：
+
 ```
 var stateObj = { foo: "bar" };
 history.pushState(stateObj, "page 2", "/");
