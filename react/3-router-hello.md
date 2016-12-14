@@ -2,6 +2,61 @@
 title: 写一个 react-router 的 Hello World
 ---
 
+来写一个使用 browserHistory 的 react-router 的 Hello World ，涉及到为何要使用服务器，
+以及如何写服务器。
+
+### 装包
+
+```
+npm i --save react-router
+```
+
+`--save` 的作用就是把报名和版本号，写入 package.json 。
+
+
+### 导入
+
+到 index.js
+
+```
+import { Router, Route, browserHistory } from 'react-router';
+```
+
+Router 就是路由器，Route 就是具体的一个路由，browserHistory 和 hashHistory 是相对的，
+用来生成没有 `#` 的链接。
+
+### 定义路由
+
+规定一下每个链接形式都，都指向执行哪个具体组件。基本格式就是
+
+```
+<Router>
+  <Route url component />
+  <Route url component/>
+</Router>
+```
+
+实际代码写成：
+
+```
+const renderRoutes = () => (
+  <Router>
+    <Route path='/' component={App} />
+    <Route path='/hello1' component={Hello1} />
+    <Route path='/hello2' component={Hello2} />
+  </Router>
+);
+ReactDOM.render(renderRoutes(), document.getElementById('app'));
+```
+
+
+如果此时执行 npm run build ，然后浏览器中打开 index.html 那么， chrome console 中
+报错
+
+```
+Uncaught TypeError: Cannot read property 'getCurrentLocation' of undefined
+```
+
 
 
 ### 代码
