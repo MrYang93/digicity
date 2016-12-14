@@ -65,7 +65,7 @@ webpack --config webpack.config.js
 
 注意：Webpack 已经不仅仅是一个打包器了，它已经发展成一个强大的 build tool
 构建工具，里面可以融入大量辅助开发的插件。所以通常我们就是把 babel 作为 Webpack 的功能之一来使用。
-  
+
 ### 添加 Webpack 插件的形式
 
 用 loader 的形式来添加。比如我想给 Webpack 添加 babel 功能。bable 自己是
@@ -195,19 +195,6 @@ index.html
 ```
 
 有了上面的代码，浏览器中打开　index.html ，可以看到　hello 字样。
-
-
-### 安装
-
-
-```
-npm i --save react-router
-```
-
-
-
-
-
 
 ### 补充知识： NPM script
 

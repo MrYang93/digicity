@@ -30,7 +30,7 @@ src/index.js
 ```js
 import React, { Component } from 'react';
 import ReactDOM from 'react-dom';
-import { Router, Route, IndexRoute, browserHistory } from 'react-router';
+import { Router, Route, browserHistory } from 'react-router';
 import {Link} from 'react-router';
 
 class App extends Component {
