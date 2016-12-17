@@ -111,6 +111,11 @@ app.use(bodyParser.urlencoded());
 然后，重启 `node index.js` 前台再次发出请求，req.body 就定义了，
 后台 console 中可以打印出 `happypeter` 字样。
 
+### 总结
+
+from 数据已经成功提交到了后台，下一步的操作就应该是把数据保存的 mongodb 数据了。
+这个我们可以参考 https://happypeter.github.io/digicity/express/4-mongoose.html 。
+
 
 ### 代码
 
