@@ -27,3 +27,6 @@ Content-Type: application/json
 ```
 curl -H "Content-Type: application/json" -X POST -d '{"username":"happypeter"}' http://localhost:3000/login
 ```
+
+上面代码中，`-H` 用来设置头部（ header ），这里我们设置的值是 `Content-Type: application/json` 。`-X` 用来设置请求方法，这里设置的值是 `POST` 。`-d` 用来设置数据，
+具体的值就是后面的 json 字符串。
