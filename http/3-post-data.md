@@ -14,7 +14,7 @@ form ，另外一种是 HTTP 客户端，例如 axios/fetch 。今天我们先�
 标签下看到，请求的头部（ Headers ） 中包含
 
 ```
-Content-Type:application/x-www-form-urlencoded
+Content-Type: application/x-www-form-urlencoded
 ```
 
 表示发送的数据，的内容类型是 `application/x-www-form-urlencoded` 。
@@ -86,5 +86,96 @@ TypeError: Cannot read property 'username' of undefined
 express 默认是不能得到请求的**主体**（ body ）的，所以上面的错误就不难理解了。那么如何
 解决这个问题呢？
 
+安装 body-parser 就可以了，body 是主体的意思，parser 解析器。
+
+第一步装包：
+
+```
+npm install --save body-parser
+```
+
+第二步导入：
+
+```
+const bodyParser = require('body-parser');
+```
+
+第三步使用：
+
+body-parser 是一个中间件，用 app.use() 加载一下即可。
+
+```
+app.use(bodyParser.urlencoded());
+```
+
+然后，重启 `node index.js` 前台再次发出请求，req.body 就定义了，
+后台 console 中可以打印出 `happypeter` 字样。
+
 
 ### 代码
+
+index.js
+
+```js
+const express = require('express');
+const app = express();
+const bodyParser = require('body-parser');
+
+app.use(bodyParser.urlencoded());
+app.use(express.static('public'));
+
+app.get('/', function(req, res){
+  res.sendFile('index.html');
+})
+
+app.post('/login', function(req, res){
+  console.log('login api...');
+  console.log(req.body.username);
+})
+
+app.listen(3000, function(){
+  console.log('running on port 3000...');
+});
+```
+
+public/index.html
+
+```
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+</head>
+<body>
+  <h1>Login</h1>
+  <form action="/login" method="post">
+    <input type='text' name='username' />
+    <input type='submit' />
+  </form>
+</body>
+</html>
+```
+
+package.json
+
+```json
+{
+  "name": "http-demo",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "body-parser": "^1.15.2",
+    "express": "^4.14.0"
+  }
+}
+```
