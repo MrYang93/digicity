@@ -21,3 +21,9 @@ Content-Type: application/json
 ```
 
 .json 接口，可以到 [body-parser](https://github.com/expressjs/body-parser) 的 Readme 中查到。
+
+### 使用 curl 调试 api
+
+```
+curl -H "Content-Type: application/json" -X POST -d '{"username":"happypeter"}' http://localhost:3000/login
+```
