@@ -11,7 +11,7 @@ curl -H 'application/json' -X POST -d '{"title":"Hello", "content": "hello conte
 我们可以把上面的额 json 数据，保存到 mongodb 数据库之中。
 
 
-### mongoose 打印连接 mongdb 成功的字符串
+### 任务一： mongoose 打印连接 mongdb 成功的字符串
 
 主要包括下面的几个任务：
 
@@ -42,3 +42,22 @@ npm i --save mongoose
 ### 添加 mongoose 的代码
 
 到以前的文档中去粘贴过来就可以。
+
+
+### 任务二： 创建 API
+
+创建如下的 API
+
+```
+app.post('/posts', function(req, res){
+  console.log(req.body);
+})
+```
+
+此时用 curl 请求
+
+```
+curl -H 'application/json' -X POST -d '{"title":"Hello", "content": "hello content"}' localhost:3000/posts
+```
+
+console.log 中可以有正确的输入。
