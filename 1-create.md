@@ -8,3 +8,30 @@ title: 创建 Github 项目
 ### 项目简介
 
 项目名叫 sleep-write ，是一个写文章的平台。
+
+
+### 具体 Github 操作
+
+到首页，点 New Repository 按钮，创建一个新的仓库。
+
+
+### 本地创建项目
+
+```
+mkdir sleep-write
+cd sleep-write
+atom . # 添加一个 README.md
+git init
+git add -A
+git commit -m"first commit"
+```
+
+
+### 添加目标仓库位置
+
+```
+git remote add origin git@github.com:happypeter/sleep-write.git
+git push -u origin master
+```
+
+这样 REAME.md 就被推送到 github.com 之上了。
