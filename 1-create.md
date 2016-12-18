@@ -35,3 +35,14 @@ git push -u origin master
 ```
 
 这样 REAME.md 就被推送到 github.com 之上了。
+
+
+### 添加项目文件夹
+
+```
+mkdir client
+mkdir server
+```
+
+项目采用前后端分离的架构，前台 react 代码都放到 client 文件夹，后台 express 代码都放到
+server 文件夹。
