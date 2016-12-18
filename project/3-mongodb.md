@@ -9,3 +9,36 @@ curl -H 'application/json' -X POST -d '{"title":"Hello", "content": "hello conte
 ```
 
 我们可以把上面的额 json 数据，保存到 mongodb 数据库之中。
+
+
+### mongoose 打印连接 mongdb 成功的字符串
+
+主要包括下面的几个任务：
+
+- 安装 MongoDB
+- 代码中安装 mongoose 这个包
+- connect 数据库，如果连接成功打印 success 字符串。
+
+
+### 安装 mongodb
+
+参考以前的文档安装就可以了。
+
+安装好之后，运行
+
+```
+mongod --dbpath=./data/db
+mongo
+```
+
+命令，就可以使用 mongoshell 了。
+
+### 安装 mongoose
+
+```
+npm i --save mongoose
+```
+
+### 添加 mongoose 的代码
+
+到以前的文档中去粘贴过来就可以。

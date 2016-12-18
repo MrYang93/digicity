@@ -32,9 +32,25 @@ https://www.mongodb.com/ 是 MongoDB 的官网。http://www.mongoing.com/ 是 Mo
 
 在 deepin Linux 或者 ubuntu 系统，都是一样的命令
 
+
+直接运行命令
+
 ```
 sudo apt-get install mongodb
 ```
+
+这个是安装的深度公司服务器上的 mongodb 。可能版本比较老。
+
+可以按照[这里](http://docs.mongoing.com/manual-zh/tutorial/install-mongodb-on-ubuntu.html)的步骤
+安装比较新的版本：
+
+```
+sudo apt-key adv --keyserver hkp://keyserver.ubuntu.com:80 --recv 0C49F3730359A14518585931BC711F9BA15703C6
+echo "deb http://repo.mongodb.org/apt/ubuntu trusty/mongodb-org/3.4 multiverse" | sudo tee /etc/apt/sources.list.d/mongodb-org-3.4.list
+sudo apt-get update
+sudo apt-get install -y mongodb-org
+```
+
 
 ### 命令行操作，使用 Mongo Shell
 
