@@ -57,7 +57,7 @@ app.post('/posts', function(req, res){
 此时用 curl 请求
 
 ```
-curl -H 'application/json' -X POST -d '{"title":"Hello", "content": "hello content"}' localhost:3000/posts
+curl -H "Content-Type: application/json" -X POST -d '{"title":"Hello", "content": "hello content"}' localhost:3000/posts
 ```
 
-console.log 中可以有正确的输入。
+console.log 中可以有正确的输出。
