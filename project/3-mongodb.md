@@ -61,3 +61,10 @@ curl -H "Content-Type: application/json" -X POST -d '{"title":"Hello", "content"
 ```
 
 console.log 中可以有正确的输出。
+
+
+### 保存数据到 db
+
+代码
+
+- [save curl data to db](https://github.com/happypeter/sleep-write/commit/8218afa9a0168fcea05cb86eda2b8c4ad9e157ee) 
