@@ -58,7 +58,7 @@ app.put('/posts/:id'...)
 ```
 
 这样，我们就实现了一套 RESTful API 。具体每个 API 的回调函数中执行什么语句，这个不是
-RESTful 说涉及到的范围。
+RESTful 涉及到的范围。
 
 代码： [full RESTful API](https://github.com/happypeter/sleep-write/commit/81826dec2b547f39abcb2049800ca613ccc0b3d5) 。
 
