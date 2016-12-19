@@ -5,7 +5,7 @@ title: 保存数据到 MongoDB
 发出 curl 请求
 
 ```
-curl -H 'application/json' -X POST -d '{"title":"Hello", "content": "hello content"}' localhost:3000/posts
+curl -H 'Content-Type: application/json' -X POST -d '{"title":"Hello", "content": "hello content"}' localhost:3000/posts
 ```
 
 我们可以把上面的额 json 数据，保存到 mongodb 数据库之中。
@@ -67,4 +67,4 @@ console.log 中可以有正确的输出。
 
 代码
 
-- [save curl data to db](https://github.com/happypeter/sleep-write/commit/8218afa9a0168fcea05cb86eda2b8c4ad9e157ee) 
+- [save curl data to db](https://github.com/happypeter/sleep-write/commit/8218afa9a0168fcea05cb86eda2b8c4ad9e157ee)
