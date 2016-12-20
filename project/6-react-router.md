@@ -64,3 +64,11 @@ app.listen(3000, function(err) {
 
 
 代码：[react router hello](https://github.com/happypeter/sleep-write/commit/bc3243f5fea8abc06333948aea913d009e36194b)
+
+
+但是，当前如果直接访问 localhost:3000/hello1 或者，跳转到 localhost:3000/hello1 之后
+刷新页面，就会报错 `can not GET /hello1`
+
+解决方法是修改 server.js 如下：
+
+代码: [change server.js](https://github.com/happypeter/sleep-write/commit/d0aba4debeb9dcf46a351c27183ed57ca95e1211)
