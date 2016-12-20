@@ -72,3 +72,7 @@ app.listen(3000, function(err) {
 解决方法是修改 server.js 如下：
 
 代码: [change server.js](https://github.com/happypeter/sleep-write/commit/d0aba4debeb9dcf46a351c27183ed57ca95e1211)
+
+### 组件化拆分
+
+代码: [router refactor](https://github.com/happypeter/sleep-write/commit/c5a8950602bb545c66430e93e5f8db8a54274717)
