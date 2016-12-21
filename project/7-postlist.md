@@ -37,3 +37,8 @@ npm start
 步骤开始变多，实际项目中，是通过**bash 脚本**来一键执行。
 
 写 Bash 脚本的推荐资料：http://billie66.github.io/TLCL/ 。
+
+
+### 首页变成链接
+
+代码：[link to post/id](https://github.com/happypeter/sleep-write/commit/214e3ecf38d9d7793115bd4add4529bdb2041648)
