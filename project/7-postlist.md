@@ -104,3 +104,16 @@ Post.findById({_id: req.params.id}, function(err, post) {
 ### 展示一篇博客详情
 
 代码： [show post](https://github.com/happypeter/sleep-write/commit/4c0384e73780c57aaa3dbdbba0655c24d697220e)
+
+
+### 报错
+
+访问： http://localhost:3000/posts/58574ecd7bedd716df5669ea
+
+报错如下：
+
+```
+bundle.js:1 Uncaught SyntaxError: Unexpected token <
+```
+
+试了一下，server.js 对应有参数的路由，就会报错。
