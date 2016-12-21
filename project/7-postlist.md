@@ -78,3 +78,29 @@ this.props.params.id
 这样得到的就是 `23456` 这个 id 值了，方便进一步的使用。
 
 代码：[router pass params](https://github.com/happypeter/sleep-write/commit/0647c18f7eb1465a43674af95c97daf0361dfbd6)
+
+### 任务三：Post.js 页面中显示  title/content
+
+后台 api 也要调整一下，不然没有数据。
+
+开发小技巧，先写后台 API ，完成后，用 curl 测试一下，打印
+
+```
+$ curl localhost:4000/posts/58574ecd7bedd716df5669ea
+{"post":{"_id":"58574ecd7bedd716df5669ea","title":"hello1","content":"hello1 content"}}%
+```
+
+这样表示后台肯定没问题了，然后再动手写前端代码。
+
+
+> 小贴士：异步函数
+Post.findById({_id: req.params.id}, function(err, post) {
+   res.json({ post: post })
+})
+上面的 findById 就是一个异步函数，异步函数的特点是，所要的结果，不能通过
+返回值的形式直接得到，而要通过回调函数来获得
+
+
+### 展示一篇博客详情
+
+代码： [show post](https://github.com/happypeter/sleep-write/commit/4c0384e73780c57aaa3dbdbba0655c24d697220e)
