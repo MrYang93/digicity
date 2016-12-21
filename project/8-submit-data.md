@@ -12,14 +12,15 @@ title: 提交数据到服务器
 
 localhost:3000/new 这样页面上应该可以看到一个 form 。
 
+代码：[new post page](https://github.com/happypeter/sleep-write/commit/8f1ca889e24018b52e8db8ad5ed38307a4ef9c80)
+
 ### 任务三：的到 form 的填写数据
 
 React 的 refs
 
-
 ```
 <form onSubmit={this.handleSubmit.bind(this)}
-  <input type='text' name="title" ref='titile' />
+  <input type='text' name="title" ref='title' />
   <input type='text' name="content" ref='content' />
   <input type="submit" />
 </form>
@@ -31,8 +32,8 @@ React 的 refs
 
 ```
 handleSubmit(){
-  let content = this.refs.content.getValue();
-  let title = this.refs.title.getValue();
+  let content = this.refs.content.value;
+  let title = this.refs.title.value;
   const data = {
     title: title,
     content: content
