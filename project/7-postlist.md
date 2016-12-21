@@ -34,6 +34,6 @@ mongod --dbpath=./data/db
 npm start
 ```
 
-步骤开始变多，实际项目中，是通过 **bash 脚本**来一键执行。
+步骤开始变多，实际项目中，是通过**bash 脚本**来一键执行。
 
 写 Bash 脚本的推荐资料：http://billie66.github.io/TLCL/ 。
