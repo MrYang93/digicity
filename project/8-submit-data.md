@@ -14,7 +14,7 @@ localhost:3000/new 这样页面上应该可以看到一个 form 。
 
 代码：[new post page](https://github.com/happypeter/sleep-write/commit/8f1ca889e24018b52e8db8ad5ed38307a4ef9c80)
 
-### 任务三：的到 form 的填写数据
+### 任务三：得到 form 的填写数据
 
 React 的 refs
 
@@ -41,3 +41,5 @@ handleSubmit(){
   axios.post('/posts', data)
 }
 ```
+
+代码：[read value from form](https://github.com/happypeter/sleep-write/commit/34e40c895e19a862a7494534e8b1b0cf55a2a633)
