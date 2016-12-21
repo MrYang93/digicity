@@ -76,3 +76,5 @@ this.props.params.id
 ```
 
 这样得到的就是 `23456` 这个 id 值了，方便进一步的使用。
+
+代码：[router pass params](https://github.com/happypeter/sleep-write/commit/0647c18f7eb1465a43674af95c97daf0361dfbd6)
