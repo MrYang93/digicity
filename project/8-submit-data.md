@@ -52,3 +52,9 @@ handleSubmit(){
 ### 任务五：文章发表后，跳转到首页
 
 代码： [router push](https://github.com/happypeter/sleep-write/commit/1c313237e6ab608b86849bfe21b8223b7d67a03f)
+
+
+### 进一步学习
+
+- http://haoqicat.com/react-express-api
+- http://haoqicat.com/hand-in-hand-react
