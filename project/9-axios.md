@@ -51,3 +51,5 @@ res.json({ message: '操作成功了！'})
 ```
 res.status(500)
 ```
+
+这样，就会触发 .catch() 的语句。

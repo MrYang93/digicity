@@ -47,3 +47,8 @@ handleSubmit(){
 ### 任务四：提交数据到服务器
 
 代码：[axios send data](https://github.com/happypeter/sleep-write/commit/0778e5a35b42e19b1caabb89800ec3963f432871)
+
+
+### 任务五：文章发表后，跳转到首页
+
+代码： [router push](https://github.com/happypeter/sleep-write/commit/1c313237e6ab608b86849bfe21b8223b7d67a03f)
