@@ -1,5 +1,5 @@
 ---
-title: 搭建基本 React-Redux 环境
+title: 搭建基本 React-Webpack 环境
 ---
 
 首先，搭建一个基本的 Webpack-React 项目。
