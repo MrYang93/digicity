@@ -79,9 +79,9 @@ curl -X DELETE localhost:4000/posts/23243243243243
 ```
 
 
-[filter posts](https://github.com/happypeter/sleep-write/commit/0b99ad259cce0a05fe9b6ee50feed1ea4950f362)
+- [filter posts](https://github.com/happypeter/sleep-write/commit/0b99ad259cce0a05fe9b6ee50feed1ea4950f362)
 
-
+- [send request](https://github.com/happypeter/sleep-write/commit/022d8831e6115d4787fc15f461352afc5d325b2f)
 
 
 
