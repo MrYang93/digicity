@@ -54,6 +54,37 @@ handleSubmit(){
 代码： [router push](https://github.com/happypeter/sleep-write/commit/1c313237e6ab608b86849bfe21b8223b7d67a03f)
 
 
+### 任务六：编辑文章
+
+代码： [update](https://github.com/happypeter/sleep-write/commit/3c5cdaebdec8a174115c8f6cb8998c50dc95c01f)
+
+
+### 任务七：删除文章
+
+代码：
+
+后台 API 代码：[delete server api done](https://github.com/happypeter/sleep-write/commit/e0fd15cc1c74dc231805cc492d448eb4dfa368ba)
+
+测试后台 API 的 curl 命令：
+
+```
+curl -X DELETE localhost:4000/posts/23243243243243
+```
+
+现在开始写前台：
+
+
+```
+<span className="delete-btn" onClick={this.handleClick.bind(this, post._id)}>删除</span>
+```
+
+
+[filter posts](https://github.com/happypeter/sleep-write/commit/0b99ad259cce0a05fe9b6ee50feed1ea4950f362)
+
+
+
+
+
 ### 进一步学习
 
 - http://haoqicat.com/react-express-api
