@@ -40,3 +40,9 @@ npm start
 我们就演示这两个组件间如何进行数据通信。
 
 [two components](https://github.com/happypeter/redux-hello/commit/e7753b1d00186dc1d5f4f613cb826e7c2a60e2d9)
+
+
+下面把页面 CSS 调整一下，以便后续开发：
+
+
+代码：**styling only**
