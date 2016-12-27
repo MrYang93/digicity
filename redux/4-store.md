@@ -32,3 +32,55 @@ let comments = [
 ```
 npm i --save redux
 ```
+
+到 store.js 中先导入
+
+```
+import { createStore } from 'redux';
+```
+
+我们可想象到的就是， store.js 中会做这样的导出
+
+```
+let store = createStore(comments)
+export default store;
+```
+
+但是，createStore 的[官方文档](http://redux.js.org/docs/api/createStore.html) 中指明这个函数是至少多传人一个参数的。
+
+这个参数就是 reducer 。
+
+### reducer
+
+reducer 和 store 一样是 redux 三大核心概念之一。reducer 是
+一个函数，用来修改 store 中的数据。
+
+举个例子：
+
+```
+function commentReducer(state = [], action) {
+  // console.log(state, action);
+  switch (action.type) {
+    case 'ADD_COMMENT':
+      // console.log([...state, action.comment])
+      return [...state, action.comment]
+    default:
+      return state;
+  }
+}
+```
+
+但是我们这里先写一个空的 reducer ：
+
+```
+function commentReducer(state = [], action) {
+  return state;
+}
+```
+
+
+### 代码
+
+下面的代码实现了，数据存储到 store.js 同时组件内部读取 store.js 中的数据成功。
+
+代码： **add store**
