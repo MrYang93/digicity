@@ -231,3 +231,5 @@ export default PostBody;
 答案：就是这里的 store.getState() 没有再次被执行。
 
 好，那么如何得到更新后的评论数量呢？
+
+代码：**problem**
