@@ -194,3 +194,40 @@ const store = createStore(commentReducer, comments);
 
 当 `return [...state, action.comment]` 执行之后，
 store.getState() 的值就被改变了。
+
+### 思考一个问题
+
+如果 PostBody.js 写成这样
+
+```
+import React, { Component } from 'react';
+import store from '../store';
+
+
+class PostBody extends Component {
+  constructor(){
+    super();
+    this.state = {
+      num: store.getState().length
+    }
+  }
+  render(){
+    return(
+      <div className="post-body">
+        <div className="comment-num">
+          { this.state.num }
+        </div>
+      </div>
+    )
+  }
+}
+
+export default PostBody;
+```
+
+那么，初始条件下，是可以从 store 中读取评论数量的，但是为什么，store 数据更新后，这里的
+评论数量不会变？
+
+答案：就是这里的 store.getState() 没有再次被执行。
+
+好，那么如何得到更新后的评论数量呢？
