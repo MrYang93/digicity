@@ -144,3 +144,53 @@ function commentReducer(state = [], action) {
 它的作用就是接受 action ，然后根据 action 修改 store 中的数据。
 
 代码： **action reducer**
+
+
+### 修改数据的时间维度的执行流程
+
+首先，用户点提交按钮
+
+```
+store.dispatch({type...payload})
+```
+
+然后，由 store.js 中的 commentReducer 来接收。
+
+```
+function commentReducer(state = [], action) {
+  // console.log(state, action);
+  switch (action.type) {
+    case 'ADD_COMMENT':
+      // console.log([...state, action.comment])
+      return [...state, action.comment]
+    default:
+      return state;
+  }
+}
+```
+也就是 commentReducer 要开始执行，执行的时候，state 是什么呢？
+
+我们可以看到 commentReducer 中 state 的默认值是 `[]` ，
+也就是说如果 state 我们不给它赋值，后续执行中它的值就是 `[]`
+
+并且这里比较奇怪的是，我们也没又看到 commentReducer 的调用语句，类似
+
+```
+let state = [
+...
+]
+commentReducer(state, action)
+```
+所以感觉上是是没有给 state 。但是，其实 redux 采用的是**函数式编程**的思想。
+
+commentReducer 的调用是在
+
+```
+const store = createStore(commentReducer, comments);
+```
+
+并且，调用过程中，state 也赋值为 `comments`。
+
+
+当 `return [...state, action.comment]` 执行之后，
+store.getState() 的值就被改变了。
