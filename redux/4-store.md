@@ -151,7 +151,7 @@ function commentReducer(state = [], action) {
 首先，用户点提交按钮
 
 ```
-store.dispatch({type...payload})
+store.dispatch({type, payload})
 ```
 
 然后，由 store.js 中的 commentReducer 来接收。
