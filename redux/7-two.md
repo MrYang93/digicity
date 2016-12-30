@@ -22,8 +22,13 @@ title: 处理两类数据
 
 ### 任务五：添加点赞功能
 
-第一步，添加样式：**like button style**
+- 第一步，添加样式：**like button style**
 
-第二步，从 store 中读取数据 **read like number from store**
+- 第二步，从 store 中读取数据 **read like number from store**
 
-第三步，添加 reducer **INCREMENT_LIKES works**
+- 第三步，添加 reducer **INCREMENT_LIKES works**
+
+### 任务六：完成首页列表
+
+- 第一步：PostBody 中添加 title ** add title to PostBody**
+- 第二步：首页组件从 store 中读取数据 **read post data from store**
