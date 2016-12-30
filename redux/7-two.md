@@ -32,3 +32,5 @@ title: 处理两类数据
 
 - 第一步：PostBody 中添加 title ** add title to PostBody**
 - 第二步：首页组件从 store 中读取数据 **read post data from store**
+
+- 第三步：首页展示博客列表： **add postList to HOME**
