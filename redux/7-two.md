@@ -18,3 +18,10 @@ title: 处理两类数据
 ### 任务四：提交评论失败，现在修复一下
 
 代码： **ADD_COMMENTS works**
+
+
+### 任务五：添加点赞功能
+
+第一步，添加样式：**like button style**
+
+第二步，从 store 中读取数据 **read like number from store**
