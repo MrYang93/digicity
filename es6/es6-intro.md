@@ -88,10 +88,45 @@ HTML ，才能美观的显示出来。
 > 注意，添加内容的文件名，无所谓，但是后缀一定要 .md 不然无法编译成功
 
 
+### Mardown 中添加语法高亮
 
-### 什么是 ES6 ？
+
+什么是语法高亮？ 如果一段代码没有语法高亮，那么就是所有的字符都显示成一个颜色。但是通常编辑器中有语法高亮，也就是不同语法作用的字符串会显示成不同的颜色。
+
+markdown 中，如果写成下面这样，最终显示的效果就是有语法高亮的：
+
+    ```js
+    console.log('hello');
+    console.log('hello');
+
+    console.log('hello');
+
+    console.log('hello');
+    ```
+
+    ```css
+    body {
+      background: red;
+    }
+    ```
+
+上面的内容会最终显示为：
 
 
 ```js
 console.log('hello');
+console.log('hello');
+
+console.log('hello');
+
+console.log('hello');
 ```
+
+```css
+body {
+  background: red;
+}
+```
+
+
+### 什么是 ES6 ？
