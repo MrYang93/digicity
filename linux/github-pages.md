@@ -1,5 +1,5 @@
 ---
-title: 使用 Github Pages 服务创建个人网站
+title:  Github Pages 创建个人网站
 ---
 
 
