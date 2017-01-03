@@ -162,7 +162,32 @@ title: 我的这篇文章的标题
 </ul>
 ```
 
-然后，就到 https://github.com/happypeter/happypeter.github.io
+然后，就到 https://github.com/happypeter/happypeter.github.io 仓库首页，找到 Create New File 按钮，创建一个新文件，叫做
+
+```
+1-first.md
+```
+
+里面添加这些内容：
+
+```
+---
+title: 我的第一篇文章
+---
+
+### 第一篇第一个大标题
+```
+
+>注意：头部千万不能敲错，不然网站就不更新了。例如，A.md 文件中
+头部敲错了，即使后续再创建一个 B.md 文件，里面添加了头部，网站也不会更新。除非先把 A.md 中的头部修改好。
+
+总结一下，虽然很多 github pages 的知识我们还没有介绍，但是有了上面的这些技巧已经完全可以胜任记笔记的工作了。当然如果想让笔记好看，就添加 CSS 进来。
+
+
+
+
+
+
 
 
 
