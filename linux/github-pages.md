@@ -147,6 +147,21 @@ title: 我的这篇文章的标题
 ```
 
 
+### 具体操作步骤
+
+到 happypeter.github.io 的项目仓库中，首先在 index.html 中添加如下内容：
+
+```html
+<ul>
+  <li>
+    <a href="1-first.html">第一篇文章</a>
+  </li>
+  <li>
+    <a href="2-second.html">第二篇文章</a>
+  </li>
+</ul>
+```
+
 
 
 
