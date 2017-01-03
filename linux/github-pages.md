@@ -2,6 +2,7 @@
 title:  Github Pages 创建个人网站
 ---
 
+Github.com 是程序员存放代码的一个网站。[Github Pages](https://pages.github.com/) 是 Github 提供的一项服务，可以免费的帮助我们托管网站。
 
 ### 注册 Github 账号
 
@@ -127,3 +128,28 @@ body {
   background: red;
 }
 ```
+
+### 如何在 happypeter.github.io 仓库中使用 markdown
+
+在 github pages 项目中使用 markdown ，基本的思路就是
+
+- 如果我想添加一个 pagename.html 的页面
+- 那我就创建 pagename.md 这个文件
+- 然后里面直接写 markdown 语法就可以了
+- 但是，跟普通的 markdown 文件不同，添加到 github pages 页面中的 .md 文件，必须有头部。
+
+头部格式如下：
+
+```
+---
+title: 我的这篇文章的标题
+---
+```
+
+
+
+
+
+### 更多技巧参考
+
+- [digicity](https://github.com/happypeter/digicity)
