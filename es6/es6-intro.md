@@ -32,6 +32,7 @@ repository = project + history
 
 ### 搭建 Github 网站
 
+
 创建一个仓库，仓库的名字是有严格规定的，
 
 ```
@@ -48,7 +49,6 @@ Description (optional) 项目描述（可选项）
 
 - Public: 开源项目
 - Private：闭源项目
-
 - Initialize this repository with a README
   初始化项目的时候，自动添加一个 README 文件
 
@@ -61,6 +61,29 @@ Description (optional) 项目描述（可选项）
 >注意：新添加的内容，不一定立刻能显示到 happypeter.github.io ，可能会有五六分钟的延迟。
 
 
+### 用 Markdown 来记笔记
+
+Markdown 跟 HTML 一样，是一种标签语言。但是 Markdown 语法特别简单，适合用来做笔记。
+
+
+- [Markdown 语法参考](https://coding.net/help/doc/project/markdown.html)
+
+Mardown 语法不是浏览器能直接支持的，所以需要先把 Mardown 语法写成的内容，编译成
+HTML ，才能美观的显示出来。
+
+那么 Github 就提供了这个编译环境。到 Github 上我们的项目中，有一个文件叫 README.md  这里 md 就是 markdown 的缩写。
+
+在这个文件里面，我们去写 markdown ，就可以翻译成 html 。
+
+例如，我们在 README.md 中填写
+
+```
+[百度](http://baidu.com)
+
+<a href="http://baidu.com">百度</a>
+```
+
+提交保存之后，页面显示出完全一样的链接效果。
 
 
 
