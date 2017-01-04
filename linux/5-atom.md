@@ -8,7 +8,6 @@ title: Atom 编辑器
 
 深度系统上，到 atom.io 网站，下载 .deb 的包，进行安装。
 
-
 ### 打开一个项目
 
 ```
@@ -21,6 +20,36 @@ atom .
 默认就是用 Ctrl-n ，保存用 Ctrl-s 。
 
 但是 Peter 平时使用一个插件来进行文件创建操作，叫做 [Advanced New File](https://atom.io/packages/advanced-open-file) 。
+
+### 自动补齐
+
+现在我想输入 `h1<tab>` 就自动补齐成
+
+```
+<h1></h1>
+```
+
+这个需要安装一个包叫做 emmet 。
+
+### 装包
+
+使用 Ctrl-Shift-P 打开命令面板，然后搜索
+
+```
+install packages
+```
+
+可以搜到 `Install Packages And Themes` ，选中，回车，就进入了装包界面。
+
+搜索报名，例如 `pigments` ，搜到之后，点 install 就可以了。
+
+查看 atom 中已经安装了哪些包，就用 Ctrl-Shift-P 打开命令面板，然后输入
+
+```
+Uninstall Packages
+```
+
+就可以看到所有已经安装的包了。
 
 
 ### 参考
