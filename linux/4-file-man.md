@@ -91,6 +91,23 @@ cp 被拷贝的的文件  目标位置
 cp -r 被拷贝的的文件夹 目标位置
 ```
 
+### 操作案例
+
+把 aaa/ 文件夹中的所有文件，都拷贝到 bbb 文件夹中
+
+```
+☁  Desktop  ls aaa
+aa bb cc
+☁  Desktop  ls bbb
+☁  Desktop  mv  aaa/* bbb
+☁  Desktop  ls aaa
+☁  Desktop  ls bbb
+aa bb cc
+☁  Desktop  
+```
+
+
+
 ### 参考资料
 
 - [驾驭命令行怪兽](http://haoqicat.com/ride-cli-monster)
