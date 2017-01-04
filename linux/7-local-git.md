@@ -126,14 +126,10 @@ git log -p
 
 `log` 是日志的意思。`-p` 是 patch （补丁，也就是修改内容）的缩写。
 
-![](https://github.com/happypeter/digicity/blob/master/img/4w-git.png?raw=true)
-
 
 小技巧：`q` 可以退出 `git log -p` 的界面，敲 `j` 可以往下翻，敲 `k` 可以往上翻。
 
 
 ### 什么是“改版历史”？
 
-改版历史（ revision history ）就是由新老各个版本组成的一条线。如下图
-
-![](https://github.com/happypeter/digicity/blob/master/img/git-history.png?raw=true)
+改版历史（ revision history ）就是由新老各个版本组成的一条线。
