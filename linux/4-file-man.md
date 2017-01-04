@@ -96,14 +96,13 @@ cp -r 被拷贝的的文件夹 目标位置
 把 aaa/ 文件夹中的所有文件，都拷贝到 bbb 文件夹中
 
 ```
-☁  Desktop  ls aaa
+$ ls aaa
 aa bb cc
-☁  Desktop  ls bbb
-☁  Desktop  mv  aaa/* bbb
-☁  Desktop  ls aaa
-☁  Desktop  ls bbb
+$ ls bbb
+$ mv  aaa/* bbb
+$ ls aaa
+$ ls bbb
 aa bb cc
-☁  Desktop  
 ```
 
 
