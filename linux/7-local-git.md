@@ -35,10 +35,16 @@ atom .
 现在我们来把一个**普通项目**变成一个**仓库** ，需要执行
 
 ```
-git init
+$ git init
+Initialized empty Git repository in /Users/peter/Desktop/project/.git/
 ```
 
-init 是英文 initialization （初始化）的缩写。运行这个命令之后，如果我们敲
+init 是英文 initialization （初始化）的缩写。
+输出信息的英文意思是：
+
+>已经在 /Users/peter/Desktop/project/.git/ 初始化了一个空的 git 仓库
+
+运行这个命令之后，如果我们敲
 
 ```
 ls
@@ -91,7 +97,7 @@ please tell me who you are
 
 ```
 git config --global user.name  "Peter Wang"
-git config --global user.email  happypeter1983@gmail.com
+git config --global user.email  "happypeter1983@gmail.com"
 ```
 
 来设置用户名和邮箱。这样再次执行
@@ -103,7 +109,7 @@ $ git commit -m"I add a file"
  create mode 100644 index.html
 ```
 
-就可以成功制作一个版本了。也就是 Git 本地工作流就完成了一个完整的循序。
+就可以成功制作一个版本了。也就是 Git 本地工作流就完成了一个完整的循环。
 
 后续如果再做第二第三个版本，就是只需要：
 
@@ -116,7 +122,7 @@ $ git commit -m"I add a file"
 
 ### 查看改版历史
 
-改版历史中，会包含多个版本。每个版本中起码要包含4个 W （ Who When What Why ）。
+改版历史（所有我们做过的版本组成的一条线，就叫历史）中，会包含多个版本。每个版本中起码要包含4个 W （ Who When What Why ）。
 
 那么如何来查看改版历史呢？
 
