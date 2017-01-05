@@ -137,7 +137,4 @@ git log -p
 
 小技巧：`q` 可以退出 `git log -p` 的界面，敲 `j` 可以往下翻，敲 `k` 可以往上翻。
 
-
-### 什么是“改版历史”？
-
-改版历史（ revision history ）就是由新老各个版本组成的一条线。
+>注意，实际中 Peter 查看版本历史从来不用 git log 命令，而是使用一个前端工具叫做 tig 。安装和使用方式可以参考：http://www.haoduoshipin.com/v/49.html
