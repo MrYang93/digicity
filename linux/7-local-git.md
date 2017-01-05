@@ -119,6 +119,8 @@ $ git commit -m"I add a file"
 
 即可。
 
+>注意：一个项目中 git init 只需要执行一次就可以了。
+
 
 ### 查看改版历史
 
