@@ -1,6 +1,9 @@
 ---
-title: 添加 SSH KEY 上传代码到 Github.com
+title: 上传代码到 Github.com
 ---
+
+前面学会了如何在本地用 git 创建项目版本，本节咱们看看咋把新版本上传到 github.com 之上。
+
 
 ### 添加 ssh key
 
