@@ -32,7 +32,7 @@ mkdir funnydeer.github.io
 拷贝进来的内容，要符合第一天我们介绍的 github pages 的格式规范（其实最重要的一点就是每个 .md 文件中都要有头部，参考第一天我们的文档中的介绍）。
 
 
-### 创建 github.com 上的同名仓库
+### 第二步：创建 github.com 上的同名仓库
 
 待续...
 
