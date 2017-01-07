@@ -115,8 +115,23 @@ Please make sure you have the correct access rights
 当然我们这里依然是使用 Github Pages 服务，所以是可以添加 md 文件的，
 具体的操作方式参考[第一节](https://happypeter.github.io/digicity/linux/1-github-pages.html)。
 
-### git clone 命令
+下面，我们涉及到如何把网站做的好看一些的问题。这个需要了解 github Pages 底层的机制。底层 Github Pages 采用了 Jekyll 框架。
 
+### Jekyll 框架
+
+要把 Github Pages 的网站做漂亮，必须了解 Jekyll 框架如何运行的。
+
+首先，.md 文件，也就是 markdown 格式的支持，就是 Jekyll 提供给我们的。这个前面已经详细介绍过了。
+
+现在，我们来添加**布局文件**
+
+- 英文参考文档：[官网](https://jekyllrb.com/docs/frontmatter/)
+- 中文参考文档（有可能过期）： [http://jekyll.com.cn/docs/frontmatter/]
+
+
+
+
+### git clone 命令
 
 要想把 github 上的一个项目代码下载到本地有两种方式，一种就是普通下载（ download ）。但是，开发者
 基本上会选择另外一种方式，就是 clone 。
@@ -129,7 +144,6 @@ clone 的特点就是不仅仅可以得到最新代码，而且可以得到整�
 
 
 ### git 各个命令的作用
-
 
 - `git push` 把本地仓库中有，而远端对应仓库中没有的**版本**推送到远端
 - `git pull` 把远端仓库中有，而本地对应仓库中没有的**版本**拉到本地
