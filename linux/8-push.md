@@ -162,7 +162,7 @@ _layouts/default.html 内容如下：
     </html>
 
 
-注意上面的 `{{ content }}` 会被替换为 .md 文件中的内容。
+注意上面的 `{{ content }}` 会被替换为 .md 文件中的内容（翻译成 html 之后）。
 
 
 
