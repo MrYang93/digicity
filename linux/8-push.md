@@ -143,27 +143,7 @@ layout: default
 
 然后来创建布局文件 default.html ，这个文件必须存放到 _layouts 文件夹之内，
 
-_layouts/default.html 内容如下：
-
-
-    <!DOCTYPE html>
-    <html lang="en">
-    <head>
-      <meta charset="UTF-8">
-      <meta name="viewport" content="width=device-width, initial-scale=1.0">
-      <meta http-equiv="X-UA-Compatible" content="ie=edge">
-      <title>Note</title>
-    </head>
-    <body>
-      <h1>Header</h1>
-        {{ content }}
-      <h1>Footer</h1>
-    </body>
-    </html>
-
-
-注意上面的 `{{ content }}` 会被替换为 .md 文件中的内容（翻译成 html 之后）。
-
+_layouts/default.html 内容如下，可以参考我的其他项目中的写法。
 
 
 ### git clone 命令
