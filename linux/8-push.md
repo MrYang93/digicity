@@ -145,22 +145,22 @@ layout: default
 
 _layouts/default.html 内容如下：
 
-```
-<!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta http-equiv="X-UA-Compatible" content="ie=edge">
-  <title>Note</title>
-</head>
-<body>
-  <h1>Header</h1>
-    {{ content }}
-  <h1>Footer</h1>
-</body>
-</html>
-```
+
+    <!DOCTYPE html>
+    <html lang="en">
+    <head>
+      <meta charset="UTF-8">
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      <meta http-equiv="X-UA-Compatible" content="ie=edge">
+      <title>Note</title>
+    </head>
+    <body>
+      <h1>Header</h1>
+        {{ content }}
+      <h1>Footer</h1>
+    </body>
+    </html>
+
 
 注意上面的 `{{ content }}` 会被替换为 .md 文件中的内容。
 
