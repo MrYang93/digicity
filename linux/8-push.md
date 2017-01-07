@@ -146,9 +146,10 @@ layout: default
 _layouts/default.html 内容如下，可以参考我的其他项目中的写法。例如：
 
     anything anything
-    {{ content }}
+      content
     anything anything
 
+注意，上面的 content 外面要套两个大括号。
 
 
 
