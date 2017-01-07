@@ -126,7 +126,7 @@ Please make sure you have the correct access rights
 现在，我们来添加**布局文件**
 
 - 英文参考文档：[官网](https://jekyllrb.com/docs/frontmatter/)
-- 中文参考文档（有可能过期）： [http://jekyll.com.cn/docs/frontmatter/]
+- 中文参考文档（有可能过期）： [中文网](http://jekyll.com.cn/docs/frontmatter/)
 
 
 ### Jekyll: 添加布局文件
@@ -143,7 +143,9 @@ layout: default
 
 然后来创建布局文件 default.html ，这个文件必须存放到 _layouts 文件夹之内，
 
-_layouts/default.html 内容如下，可以参考我的其他项目中的写法。
+_layouts/default.html 内容如下，可以参考我的其他项目中的写法。例如：
+
+
 
 
 ### git clone 命令
