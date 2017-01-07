@@ -18,7 +18,7 @@ npm i --save react-router
 
 到 index.js
 
-```
+```js
 import { Router, Route, browserHistory } from 'react-router';
 ```
 
@@ -74,7 +74,7 @@ Uncaught TypeError: Cannot read property 'getCurrentLocation' of undefined
 
 可以在 chrome console 中执行下面的代码看看效果：
 
-```
+```js
 var stateObj = { foo: "bar" };
 history.pushState(stateObj, "page 2", "/");
 undefined
