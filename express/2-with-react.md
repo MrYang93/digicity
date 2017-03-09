@@ -159,7 +159,52 @@ http-server .
 下面来看如何发请求到服务器端。
 
 
+
+### 实现 API
+
+开发一个功能，好的做法是，先修改后端代码，也就是先实现 API ，然后下一步就是用 curl 这样的命令，来测试一下 API ，发现 API 没毛病，然后再动手去写前端代码。
+
+打开 express-backend 中的 index.js 代码，添加下面这个 API
+
+```js
+app.get('/username', function(req, res){
+  res.send({username: 'happypeter'});
+})
+```
+
+### 用 curl 来测试 API
+
+curl 是一个安装在系统上的命令，可以用来发 http 请求，最适合用来测试 API 。
+
+动手写前端代码之前，如果用 curl 测试一下 API ，会让写前端代码的时候，我们心里更踏实。
+
+```
+curl -X GET 'http://localhost:3000/username'
+```
+
+如果后端没有问题，应该可以看到下面的输出
+
+```
+{username: 'happypeter'}
+```
+
+这样，后端 API 测试通过。
+
+另注：如果执行出现如下错误：
+
+```
+➜  express-backend git:(master) ✗ curl -X GET localhost:3000/username
+curl: (7) Failed to connect to localhost port 3000: Connection refused
+```
+
+翻译：连接 localhost:3000 失败，连接被拒绝。
+
+错误的原因：后端没有启动。
+
+
 ### 安装 axios 发送 http 请求
+
+现在我们来到前端代码中。引入 axios 。axios 按照[官网](https://github.com/mzabriskie/axios)的说法，它是一个 `http client` （ http 的客户端），换句话说，它是专门用来发 http 请求的。
 
 axios 是常用的发 http 请求的工具（现在一般不提发 ajax 请求这个说法了）。
 
@@ -182,9 +227,10 @@ http 请求，向服务要数据，所以，代码非常适合写到生命周期
 
 ```js
 componentWillMount() {
-  axios.get('http://localhost:3000/').then(function(response){
+  axios.get('http://localhost:3000/username').then(function(response){
       return console.log(response);
-  })
+    }
+  )
 }
 ```
 
