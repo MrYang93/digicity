@@ -7,7 +7,7 @@ title: 上手 Express 框架
 
 但是，我们想一想，如果只有 UI ，那么用户要看的数据从哪里来？用户需要保存的数据
 如何进行运算之后保存到数据库中？这部分的功能就需要后端代码来完成。今天我们要介绍的
-Express 就是一个后台框架。
+Express 就是一个后端（ back-end ）框架。
 
 我们可能知道，当下实现后台服务，最流行的方式就是使用 Nodejs , Express 就是 Nodejs 的
 一个框架，而且是 Nodejs 各种后台框架中最为通用，最为流行的一个，没有之一。所以学习 Nodejs
@@ -16,7 +16,7 @@ Express 就是一个后台框架。
 ### 你好，Express
 
 Express 的官网位置是 http://www.expressjs.com.cn/ 。官网上，首页最能吸引
-我们注意的就是 **API** 这个关键字。API 是**应用开发接口**，简称**接口** 。而
+我们注意的就是 **API** 这个关键字。API （ Application Program Interface ）是**应用开发接口**，简称**接口** 。而
 Express 就是用来制作后台接口的，或者说叫制作后台 API 的。
 
 那么之后，我们整个项目的架构，就是用 Express 来制作后台 API , 这些 API 的使用
@@ -43,7 +43,7 @@ npm init -y
 - 工具：就是完成特定的一个小功能的软件，比如 Babel
 - 库： 英文叫 lib ，我们每天 import 的东西，都是库。库是把一系列相关工具，组织到一起。例如，lodash ，react 。库里面的东西虽然多，但是都是干一类工作的。
 - 框架：英文是 framework ，是把很多类功能的工具和库集合到一起，目的是完成整个项目。
-  例如，RubyOnRails
+  例如，RubyOnRails，Express，React（这里指的是 React + friends，纯粹的 React 官方的说法就是一个 lib ） 。
 
 ### 继续 Express 的 Hello World
 
@@ -65,14 +65,17 @@ npm install --save express
 安装就会失败，报错信息为：
 
 ```
-Refusing to install express as a dependency of itself
+Refusing to install package with name "express" under a package
+also called "express".
 ```
+
+中文翻译：拒绝把一个叫做 express 的包安装到它同名的包之下。
 
 解决方法就是：修改项目文件夹名。
 
 小贴士结束。
 
-### 写代码，用 ES6 ？
+### 写后台代码，用 ES6 ？
 
 我们的前台代码，因为有 Babel 的支持，可以全部采用 ES6
 来写。后台代码，我们会让它直接运行在 Nodejs 之上，不用 Babel （ 当然也可以用，但是配置比较麻烦，不值当的）。
