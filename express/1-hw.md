@@ -88,7 +88,9 @@ ES6 模块语法的），我们的后台代码暂时需要用 require
 来替代 import 。require 用的是 commonjs 模块语法，
 这个是 Nodejs 原生支持的。
 
-最终结论，ES6 可以用。
+最终结论：
+
+>ES6 可以用，别用 import 就好了。
 
 ### 真正的 Hello World 来了
 
