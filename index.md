@@ -1,4 +1,5 @@
 ---
+layout: default
 title: JS 独孤求败
 ---
 
