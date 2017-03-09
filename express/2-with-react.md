@@ -199,8 +199,7 @@ componentWillMount() {
 XMLHttpRequest cannot load http://localhost:3000/. No 'Access-Control-Allow-Origin' header is present on the requested resource. Origin 'null' is therefore not allowed access.
 ```
 
-`XMLHttpRequest` 是发 HTTP 请求的底层机制，是浏览器自带功能。上面的
-报错翻译如下：
+`XMLHttpRequest` 是发 HTTP 请求的底层机制，是浏览器自带功能。上面的报错翻译如下：
 
 >无法加载后台 http://localhost:3000 . 被请求的资源中没有设置
 > Access-Control-Allow-Origin 头部。源头设置为 Null ，所以不允许
@@ -208,8 +207,7 @@ XMLHttpRequest cannot load http://localhost:3000/. No 'Access-Control-Allow-Orig
 
 
 
-Access-Control-Allow-Origin 字面意思：允许源头访问控制。服务器上的
-默认是不允许其他网址的网站请求资源的，如果需要开通权限，就需要设置这个选项。
+Access-Control-Allow-Origin 字面意思：允许来源访问控制。服务器上的默认是不允许其他网址（或者网址相同，但是端口号不同）的网站请求资源的，如果需要开通权限，就需要设置这个选项。
 
 
 那么，如何开通服务器上的这个资源访问权限呢？就是要**在服务器**上做下面的设置
