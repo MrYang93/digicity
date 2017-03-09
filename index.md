@@ -21,7 +21,7 @@ title: JS 独孤求败
   </div>
 </section>
 <div class="divider">
-  <a href="#">PLACEHOLDER</a>
+  <a href="https://github.com/happypeter/digicity/commits/gh-pages">最后更新：2017年3月10日</a>
 </div>
 <div class="reviewers">
   <div class="name-card">
