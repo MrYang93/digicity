@@ -2,17 +2,14 @@
 title: React 牵手 Express
 ---
 
-仅仅有了 API ，功能还不完全。需要有前端来调用 API ，完成
-整个小功能。
+仅仅有了 API ，功能还不完全。需要有前端来调用 API ，完成整个小功能。
 
 在我们《JS 独孤求败》课程体系里面，前端代码我们都是用 React 来写，
-所以前端和后端都是用 JS 来写。但是这里要提醒大家的是，前端和后端是
-完全独立的两个项目，通过 API 来作为桥梁。其实，我们后端虽然是 Nodejs 写的，但是前端用 PHP/JAVA 也能写。
+所以前端和后端都是用 JS 来写。但是这里要提醒大家的是，前端和后端是**完全独立**的两个项目，通过 API 来作为桥梁。其实，我们后端虽然是 Nodejs 写的，但是用 PHP/JAVA 也能写。
 
 ### 前端项目准备
 
-前面的课程中，我们已经学习了 React 开发。那么先在就来写一个完全
-跟后台无关的 React 的 Hello World ，要求：
+前面的课程中，我们已经学习了 React 开发。那么先在就来写一个完全跟后台无关的 React 的 Hello World ，要求：
 
 - 页面最终显示出来的，就是你的用户名，例如 happypeter
 - 要用到 react 的 state ，constructor ，生命周期
@@ -25,12 +22,12 @@ title: React 牵手 Express
 小贴士结束
 
 
-所有代码都放到 react-with-express 这个文件夹中，代码如下：
+所有代码都放到 react-frontend 这个文件夹中，代码如下：
 
 
 src/index.js
 
-```jsx
+```js
 import React, { Component } from 'react';
 import ReactDOM from 'react-dom';
 
@@ -61,7 +58,7 @@ package.json
 
 ```json
 {
-  "name": "react-with-express",
+  "name": "react-frontend",
   "version": "1.0.0",
   "description": "",
   "main": "index.js",
@@ -133,6 +130,24 @@ index.html
 </html>
 ```
 
+### 安装 http-server
+
+前端代码其实最好也跑在一个 http 服务器之上，最简单的方法是：
+
+```
+npm install -g http-server
+```
+
+这样，我们就有了一个简单的系统工具叫 http-server
+
+```
+cd react-frontend/
+http-server .
+```
+
+就能把我们的前端项目启动到一个 http 服务器上了。
+
+
 ### 为何 state 要设置两次
 
 上面代码都是 React 的基础，我们不在重复，唯一可能感觉奇怪的是
@@ -155,7 +170,7 @@ axios 是常用的发 http 请求的工具（现在一般不提发 ajax 请求�
 npm install --save axios
 ```
 
-把 axios 安装到 react-with-express 这个项目中。
+把 axios 安装到 react-frontend 这个项目中。
 
 装包之后，就可以到 src/index.js 中去使用了，代码如下
 
