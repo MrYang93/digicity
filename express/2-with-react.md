@@ -225,7 +225,6 @@ Access-Control-Allow-Origin: *
 
 cors 是 Cross Origin Resource Share ，安装了这个包就可以完成
 
-
 ```
 Access-Control-Allow-Origin: *
 ```
@@ -306,29 +305,7 @@ componentWillMount() {
 happypeter
 ```
 
-
 下面进一步调整 componentWillMount 如下：
-
-```
-componentWillMount() {
-  axios.get('http://localhost:3000/username').then(function(response){
-      return this.setState({username: response.data.username});
-  })
-}
-```
-
-重新 build 代码，然后浏览器中运行，报错：
-
-```
-bundle.js:89 Uncaught (in promise) TypeError: Cannot read property 'setState' of undefined(…)(anonymous function) @ bundle.js:89
-```
-
-上面的错误，就意味着 `this` 没有被定义。这个是一个 JS 基础问题，跟 React 没有
-直接联系。相关知识，需要理解 `bind(this)` 才能透彻理解这个问题。
-
-bind(this) 的视频: http://haoqicat.com/o-o-js/2-2-this
-
-这里呢，我们直接给出解决方法，就是使用 ES6 的箭头函数：
 
 ```
 componentWillMount() {
@@ -338,8 +315,6 @@ componentWillMount() {
 }
 ```
 
-
 ### 总结
 
-至此，前台页面上成功显示出了，后台的数据。这样，一个前后分离机构，通过 API 通信的应用的 Hello
-World 就完成了。
+至此，前台页面上成功显示出了，后台的数据。这样，一个前后分离架构，通过 API 通信的应用的 Hello World 就完成了。
