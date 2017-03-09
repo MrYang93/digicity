@@ -63,19 +63,19 @@ package.json
   "description": "",
   "main": "index.js",
   "scripts": {
-    "build": " ./node_modules/.bin/webpack"
+    "build": "webpack"
   },
+  "keywords": [],
   "author": "",
   "license": "ISC",
-  "devDependencies": {
-    "babel-core": "^6.10.4",
-    "babel-loader": "^6.2.4",
-    "babel-preset-es2015": "^6.9.0",
-    "babel-preset-react": "^6.11.1",
-    "babel-preset-stage-0": "^6.5.0",
-    "react": "^15.2.1",
-    "react-dom": "^15.2.1",
-    "webpack": "^1.13.1"
+  "dependencies": {
+    "babel-core": "^6.23.1",
+    "babel-loader": "^6.4.0",
+    "babel-preset-env": "^1.2.1",
+    "babel-preset-react": "^6.23.0",
+    "react": "^15.4.2",
+    "react-dom": "^15.4.2",
+    "webpack": "^2.2.1"
   }
 }
 ```
@@ -92,10 +92,10 @@ module.exports = {
     filename: 'bundle.js'
   },
   module: {
-    loaders: [
+    rules: [
       {
         test: /\.js$/,
-        loader: 'babel-loader'
+        use: 'babel-loader'
       }
     ]
   }
@@ -106,8 +106,7 @@ module.exports = {
 
 ```
 {
-  "presets": ["es2015", "react", "stage-0"],
-  "plugins": []
+  "presets": ["env", "react"]
 }
 ```
 
