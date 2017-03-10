@@ -251,8 +251,7 @@ XMLHttpRequest cannot load http://localhost:3000/. No 'Access-Control-Allow-Orig
 > 访问。
 
 
-
-Access-Control-Allow-Origin 字面意思：允许来源访问控制。服务器上的默认是不允许其他网址（或者网址相同，但是端口号不同）的网站请求资源的，如果需要开通权限，就需要设置这个选项。
+Access-Control-Allow-Origin 字面意思：访问控制允许来源。服务器上的默认是不允许其他网址（或者网址相同，但是端口号不同）的网站请求资源的（也就是默认不允许**跨域请求**），如果需要开通权限，就需要设置这个选项。
 
 
 那么，如何开通服务器上的这个资源访问权限呢？就是要**在服务器**上做下面的设置
@@ -291,9 +290,7 @@ Date: Thu, 08 Dec 2016 01:51:44 GMT
 Connection: keep-alive
 ```
 
-curl 是专门用来测试 API 的一个命令行工具，`-I` 选项用来专门活动服务器
-返回的 header 。命令返回的信息，就是服务器端被请求资源的的 header 。
-很明确是没有 Access-Control-Allow-Origin 这一项的。下面我们安装 cors 这个包，就可以解决这个问题。
+curl 的 `-I` 选项用来专门拿到服务器返回的 header 。命令返回的信息，就是服务器端被请求资源的的 header 。上面很明显是没有 Access-Control-Allow-Origin 这一项的。下面我们安装 cors 这个包，就可以解决这个问题。
 
 
 具体步骤如下：
@@ -307,6 +304,13 @@ npm install --save cors
 再次提醒：这个包要安装到后台代码中。
 
 然后按照文档，添加下面两行代码，再重启服务器代码：
+
+```js
+const cors = require('cors')
+app.use(cors());
+```
+
+接下来再用 `curl -I` 看看输出如下：
 
 ```
 HTTP/1.1 200 OK
