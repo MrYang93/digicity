@@ -185,13 +185,11 @@ WriteResult({ "nRemoved" : 1 })
 ```
 
 
-mongo shell 中的基本操作我们就介绍到这里。但是，我们发现敲命令比较麻烦，所以，可以考虑
-使用图形化的界面来操作 MongoDB 。
+mongo shell 中的基本操作我们就介绍到这里。但是，我们发现敲命令比较麻烦，所以，可以考虑使用图形化的界面来操作 MongoDB 。
 
 ### 图形化的操作界面 mongo-express
 
-Mongo-express 是一个用 express 技术开发的，MongoDB 的　GUI (图形界面)　。可以方便美观的
-操作 MongoDB 中的数据。
+Mongo-express 是一个用 express 技术开发的，MongoDB 的　GUI (图形界面)　。可以方便美观的 操作 MongoDB 中的数据。
 
 参考：http://haoqicat.com/hand-in-hand-react/4-mongo-express
 
@@ -201,8 +199,7 @@ Mongo-express 是一个用 express 技术开发的，MongoDB 的　GUI (图形�
 npm install -g mongo-express
 ```
 
-mongo-express 装好之后，我们需要通知它，到底要连接到哪个数据库。这个是通过，修改
-mongo-express 的配置文件来搞定的。
+mongo-express 装好之后，我们需要通知它，到底要连接到哪个数据库。这个是通过，修改 mongo-express 的配置文件来搞定的。
 
 所以首先第一步，我们先要找到　mongo-express 的配置文件。
 
@@ -220,7 +217,7 @@ cd mongo-express
 cp config.default.js config.js
 ```
 
-最后一步，就是把*假配置文件* ，改名为真的　config.js , 也就是说是程序真正会读到的配置文件。
+最后一步，就是把样例配置文件  config.defualt.js ，改名为真实的配置文件　config.js , 也就是说是程序会自动读到的配置文件。
 
 打开配置文件，把
 
