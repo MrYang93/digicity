@@ -138,13 +138,15 @@ db.users.find({})
 
 第一步，增。
 
+使用 insert() 接口。
+
 ```
 > db.users.insert({username: 'billie', email: 'billie@billie.com'})
 ```
 
 第二步，改。
 
-代码中比较推荐用 save ，不推荐 update。
+使用 update() 接口。
 
 ```
  db.users.update({_id: ObjectId("584b62b830a2a2cbf4c4c3f6")}, {username: "billie66", email:"billie@billie.com"})
@@ -155,6 +157,8 @@ update 接口中有两个参考，第一个是查询条件，用来定位要更�
 
 第三步，查。
 
+使用 update() 接口。
+
 ```
 db.users.find({})
 ```
@@ -163,6 +167,9 @@ db.users.find({})
 
 
 第四步，删。
+
+使用 remove() 接口。
+
 
 删除特定一个文档：
 
