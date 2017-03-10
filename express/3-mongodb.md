@@ -56,8 +56,9 @@ $ sudo apt-get install -y mongodb-org
 brew install mongodb
 ```
 
+装好之后，就可以来使用了
 
-### 命令行操作，使用 Mongo Shell
+### 通过命令行操作 MongoDB
 
 启动 mongodb
 
@@ -65,7 +66,10 @@ brew install mongodb
 mkdir -p data/db
 mongod --dbpath=./data/db
 ```
-这样，mongodb 就启动成功了，启动端口是 27017 。
+
+上面，第一步创建一个文件夹，用来存储数据。第二个命令就是启动 Mongodb ，注意，上面的命令就是 `mongod` ，后面传递的选项就是给出数据存储位置。
+
+这样，mongodb 就启动成功了。
 
 现在要进行 Mongodb 数据库操作，我们就开启 Mongo Shell
 
