@@ -81,8 +81,9 @@ mongo
 
 ### 插入一条数据
 
-可以参考：http://haoqicat.com/react-express-api/2-mongodb
-可以参考：http://newming.coding.me/myidoc/html/%E6%95%B0%E6%8D%AE%E5%BA%93/mongodb.html
+参考：
+- [好奇猫课程](http://haoqicat.com/react-express-api/2-mongodb)
+- [Newming](http://newming.coding.me/myidoc/html/%E6%95%B0%E6%8D%AE%E5%BA%93/mongodb.html)
 
 现在思考一下，一条数据，应该保存成一个什么单位？给出三个选项：数据库，集合，文档？
 
