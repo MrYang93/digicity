@@ -249,9 +249,9 @@ mongo = {
 show dbs
 ```
 
-看到的。
+看到的。由于我们的 digicity 这个数据库本身没有设置密码，所以上面 username 和 password 两项都改成空字符串就可以了。
 
-同时，mongo-express 的密码有默认值，通过　config.js 中这几行：
+同时，mongo-express 这个软件自己还有自己登陆的用户名和密码，并且有默认值，通过　config.js 中这几行：
 
 ```
 basicAuth: {
@@ -268,7 +268,7 @@ basicAuth: {
 $ mongo-express
 ```
 
-在深度 Linux 上，输出如下
+输出如下
 
 ```
 Mongo Express server listening at http://localhost:8081
