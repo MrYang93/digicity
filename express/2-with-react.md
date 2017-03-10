@@ -228,7 +228,7 @@ http 请求，向服务要数据，所以，代码非常适合写到生命周期
 
 ```js
 componentWillMount() {
-  axios.get('http://localhost:3000/username').then(function(response){
+  axios.get('http://localhost:3000/username').then( response =>{
       return console.log(response);
     }
   )
