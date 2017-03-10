@@ -31,7 +31,7 @@ title: JS 独孤求败
        happypeter
       </div>
       <div class="job-title"><a href="http://haoduoshipin.com">本书作者，好多视频网作者</a></div>
-      最伟大的灵魂把自己隐藏在作品之后。
+      A GREAT ARTIST ALWAYS HIDES THEMSELVES IN THEIR WORK
     </div>
   </div>
 </div>
