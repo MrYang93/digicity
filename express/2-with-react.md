@@ -184,7 +184,7 @@ curl -X GET 'http://localhost:3000/username'
 
 如果后端没有问题，应该可以看到下面的输出
 
-```
+```json
 {username: 'happypeter'}
 ```
 
@@ -193,7 +193,7 @@ curl -X GET 'http://localhost:3000/username'
 另注：如果执行出现如下错误：
 
 ```
-➜  express-backend git:(master) ✗ curl -X GET localhost:3000/username
+$ curl -X GET localhost:3000/username
 curl: (7) Failed to connect to localhost port 3000: Connection refused
 ```
 
