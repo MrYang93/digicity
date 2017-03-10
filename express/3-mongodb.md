@@ -131,7 +131,7 @@ WriteResult({ "nInserted" : 1 })
 第四步，列出一个集合中的所有文档：
 
 ```
-db.users.find({})
+db.users.find()
 ```
 
 ### 对数据记录进行增删改查
@@ -189,26 +189,26 @@ mongo shell 中的基本操作我们就介绍到这里。但是，我们发现�
 
 ### 图形化的操作界面 mongo-express
 
-Mongo-express 是一个用 express 技术开发的，MongoDB 的　GUI (图形界面)　。可以方便美观的 操作 MongoDB 中的数据。
+Mongo-express 是一个用 express 技术开发的，MongoDB 的 GUI (图形界面)。可以方便美观的 操作 MongoDB 中的数据。
 
 参考：http://haoqicat.com/hand-in-hand-react/4-mongo-express
 
-一般系统上的工具，我们用全局安装就可以
+一般可以共用的工具，我们用全局安装就可以
 
 ```
 npm install -g mongo-express
 ```
 
-mongo-express 装好之后，我们需要通知它，到底要连接到哪个数据库。这个是通过，修改 mongo-express 的配置文件来搞定的。
+mongo-express 装好之后，我们需要通知它到底要连接到哪个数据库，通过修改 mongo-express 的配置文件来搞定。
 
-所以首先第一步，我们先要找到　mongo-express 的配置文件。
+所以首先第一步，我们先要找到　mongo-express 的配置文件。下面的这个命令可以帮我们找到 mongo-express 的安装位置：
 
 ```
 $ npm list -g mongo-express
 /home/peter/.nvm/versions/node/v7.1.0/lib
 ```
 
-找到安装位置后，就可以进入安装文件夹，来修改配置文件了。
+找到后，就可以进入安装文件夹来修改配置文件了。
 
 ```
 cd /home/peter/.nvm/versions/node/v7.1.0/lib
@@ -276,11 +276,9 @@ basicAuth credentials are "admin:pass", it is recommended you change this in you
 Connecting to digicity...
 ```
 
-虽然上面有一个　`MongoError` 但是，浏览器中打开：　 http://localhost:8081 可以开始使用
-mongo-express 了。
+浏览器中打开 http://localhost:8081 可以开始使用 mongo-express 了。
 
 
 ### 总结
 
-上面。我们分别用 Mongo Shell 和　mongo-express 两种方式，对　mongodb 数据库进行了操作。
-但是，最重要的一种操作　mongodb　的形式我们还没有介绍。这就是用　JS　来操作　mongodb 。
+上面。我们分别用 Mongo Shell 和 mongo-express 两种方式，对 mongodb 数据库进行了操作。但是，最重要的一种操作　mongodb　的形式我们还没有介绍。这就是如何在 JS 代码中来操作 mongodb 。
