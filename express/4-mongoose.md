@@ -103,7 +103,7 @@ db.once('open', function() {
 
 然后，后台重启　`node index.js` 看看数据库中，的确添加了一个文档。
 
-强调：｀User｀ 对应　users 集合，她本身是　models/user.js 中导出的一个 model 。所以说　User 就是一个空盒子。而小写的｀user` 是　`new User` 得到的一个对象，对应一个实际的文档，所以其中会真正保存一个用户的实际　username 和 email 数据。
+强调：｀User｀ 对应　users 集合，她本身是　models/user.js 中导出的一个 model 。所以说　User 就是一个空盒子。而小写的 user 是　`new User` 得到的一个对象，对应一个实际的文档，所以其中会真正保存一个用户的实际　username 和 email 数据。
 
 `user.save` 就是把　`user` 中已经有的数据（在内存中），真正保存到　MongoDB 数据库中（保存到硬盘上）。
 
