@@ -246,7 +246,7 @@ render(){
     return (
       <div key={i}>
          username:
-        {user}
+        {user.username}
       </div>
     )
   });
@@ -289,7 +289,7 @@ class App extends Component {
       return (
         <div key={i}>
            username:
-          {user}
+          {user.username}
         </div>
       )
     });
