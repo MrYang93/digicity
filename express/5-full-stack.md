@@ -19,12 +19,11 @@ title: 打通全栈
 首先，保证 mongodb 处于运行状态，然后，通过　mongo-express 查看一下，
 mongodb 中是否有多个用户。
 
-实际工作中，开发者是通过看　[Mongoose 的　API 文档](http://mongoosejs.com/docs/api.html) 来解决这个问题。但是起步阶段，
-还是要先通过教程，来学习一些最基本的使用，后续才会有你能力看　API 文档。
+成熟的工程师，你给他 [Mongoose 的　API 文档](http://mongoosejs.com/docs/api.html) 他就有能力完成这个任务了。但是如果你属于开发新手，还是要先通过教程，来学习一些最基本的使用，后续才会有能力看 API 文档。
 
 参考：http://haoqicat.com/react-express-api/5-rest-api
 
-修改代码如下：
+到后台代码的 index.js 文件中，把 db.once 部分的修改成下面这样：
 
 ```
 db.once('open', function() {
@@ -34,7 +33,7 @@ db.once('open', function() {
 });
 ```
 
-这样，我们到　express-hello 文件夹中，运行，可以看到如下输出结果
+这样，我们到　express-backend 文件夹中，运行，可以看到如下输出结果
 
 
 ```
@@ -126,7 +125,7 @@ $ curl -X GET http://localhost:3000/users
 
 ### 后台代码
 
-express-hello 文件夹中，有下面的文件：
+express-backend 文件夹中，有下面的文件：
 
 index.js
 
@@ -187,7 +186,7 @@ package.json
 
 ```json
 {
-  "name": "express-hello",
+  "name": "",
   "version": "1.0.0",
   "description": "",
   "main": "index.js",
