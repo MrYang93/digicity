@@ -186,12 +186,12 @@ package.json
 
 ```json
 {
-  "name": "",
+  "name": "express-backend",
   "version": "1.0.0",
   "description": "",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "start": "nodemon index.js"
   },
   "keywords": [],
   "author": "",
@@ -204,10 +204,9 @@ package.json
 }
 ```
 
-
 ### 前台书写　axios 请求
 
-到　react-with-express/　也就前台项目中，修改生命周期函数如下：
+到　react-frontend/　也就前台项目中，修改生命周期函数如下：
 
 ```js
 componentWillMount() {
