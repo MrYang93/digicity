@@ -2,7 +2,6 @@
 title: 使用 Mongoose 连接 JS 和 MongoDB
 ---
 
-
 Mongoose 是一个 JS 库，作用是把 MongoDB 的数据，封装成 JS 对象。便于
 我们用 JS 代码来操作 Mongodb 。
 
@@ -107,22 +106,6 @@ db.once('open', function() {
 
 `user.save` 就是把　`user` 中已经有的数据（在内存中），真正保存到　MongoDB 数据库中（保存到硬盘上）。
 
-### 解决那个讨厌的警告
-
-后台　`node index.js` 运行时可以看到一个讨厌的警告信息，虽然不影响代码运行效果，但是
-也很碍眼。
-
-```
-Mongoose: mpromise (mongoose's default promise library) is deprecated, plug in your own promise library
-```
-
-解决办法是在连接 MongoDB 数据库 `mongoose.connect(...)``; 之前，添加一行代码：
-
-```
-mongoose.Promise = global.Promise;
-```
-
-重启后台，警告信息就没有了。
 
 ### 代码
 
@@ -136,7 +119,6 @@ app.use(cors());
 const mongoose = require('mongoose');
 const User = require('./models/user');
 
-mongoose.Promise = global.Promise;
 
 mongoose.connect('mongodb://localhost:27017/digicity');
 // 执行此行代码之前，要保证 mongodb 数据库已经运行了，而且运行在 27017 端口
@@ -184,12 +166,12 @@ package.json 如下
 
 ```json
 {
-  "name": "express-hello",
+  "name": "express-backend",
   "version": "1.0.0",
   "description": "",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "start": "nodemon index.js"
   },
   "keywords": [],
   "author": "",
