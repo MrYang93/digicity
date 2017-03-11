@@ -234,27 +234,6 @@ componentWillMount() {
 }
 ```
 
-但是，如果在　render 函数中，我们这样写
-
-```
-render(){
-  return(
-    <div>
-      {this.state.users}
-    </div>
-  )
-}
-```
-
-就会触发下面的错误：
-
-```
-bundle.js:894 Uncaught (in promise) Error: Objects are not valid as a React child (found: object with keys {_id, username, email}). If you meant to render a collection of children, use an array instead or wrap the object using createFragment(object) from the React add-ons. Check the render method of `App`.(…)
-```
-
-报错信息的大致意思是：对象不是被允许的　React 子元素。
-
-解决方式，看下一小部分。
 
 ### 使用 map 展开数组
 
@@ -281,7 +260,6 @@ render(){
 ```
 
 这样，页面中就可以显示出所有用户的用户名的列表了。
-
 
 ### 前台代码
 
@@ -339,10 +317,10 @@ module.exports = {
     filename: 'bundle.js'
   },
   module: {
-    loaders: [
+    rules: [
       {
         test: /\.js$/,
-        loader: 'babel-loader'
+        use: 'babel-loader'
       }
     ]
   }
@@ -353,8 +331,7 @@ module.exports = {
 
 ```
 {
-  "presets": ["es2015", "react", "stage-0"],
-  "plugins": []
+  "presets": ["env", "react"]
 }
 ```
 
@@ -366,7 +343,6 @@ index.html 如下：
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta http-equiv="X-UA-Compatible" content="ie=edge">
   <title>Document</title>
 </head>
 <body>
