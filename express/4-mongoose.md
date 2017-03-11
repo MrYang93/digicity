@@ -26,7 +26,7 @@ npm install --save mongoose
 
 装包成功后，一般的步骤就是先导如，后调用。
 
-打开 express-hello 的 index.js 文件，导入 mongoose
+打开 express-backend 的 index.js 文件，导入 mongoose
 
 ```
 const mongoose = require('mongoose');
