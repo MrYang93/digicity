@@ -47,7 +47,7 @@ mongoose.connect('mongodb://localhost:27017/digicity');
 然后添加下面代码
 
 ```js
-var db = mongoose.connection;
+let db = mongoose.connection;
 db.on('error', console.log);
 db.once('open', function() {
   console.log('success!')
@@ -59,8 +59,7 @@ db.once('open', function() {
 
 ### 创建数据 model
 
-创建一个专门的　models/user.js ，里面代码的作用是，实现一个对象跟一个
-数据集合之间映射关系。
+创建一个专门的　models/user.js ，里面代码的作用是，实现一个对象跟一个数据集合之间映射关系。
 
 ```js
 var mongoose = require('mongoose');
@@ -81,16 +80,18 @@ module.exports = mongoose.model('User', UserSchema);
 首先创建了一个　Schema （概要），Schema 就是用来描述这个集合中每个文档
 的数据结构，具体来讲就是
 
-- 有那几个字段（　field ）？我们这里有两个　`username` 和　`email`
+- 有那几个字段 ( field ）？我们这里有两个　`username` 和　`email`
 - 每个字段的类型
 
-这样，映射关系就建立完毕。
+这样，映射关系就建立完毕。最终用 `module.exports` 导出的就是一个 model （模型）。
 
 ### 保存一个文档
 
 把　db.once 部分的代码，改成下面这个样子
 
 ```js
+let User = require('./models/user');
+...
 db.once('open', function() {
    let user = new User({username: 'inCode', email: 'inCode@incode.com'});
    user.save(function(err){
@@ -102,13 +103,9 @@ db.once('open', function() {
 
 然后，后台重启　`node index.js` 看看数据库中，的确添加了一个文档。
 
-强调：｀User｀ 对应　users 集合，她本身是　models/user.js 中导出的一个
-model 。所以说　User 就是一个空盒子。而小写的　｀user` 是　`new User`
-得到的一个对象，对应一个实际的文档，所以其中会真
-正保存一个用户的实际　username 和 email 数据。
+强调：｀User｀ 对应　users 集合，她本身是　models/user.js 中导出的一个 model 。所以说　User 就是一个空盒子。而小写的｀user` 是　`new User` 得到的一个对象，对应一个实际的文档，所以其中会真正保存一个用户的实际　username 和 email 数据。
 
-`user.save` 就是把　`user` 中已经有的数据（在内存中），真正保存到　MongoDB
-数据库中（保存到硬盘上）。
+`user.save` 就是把　`user` 中已经有的数据（在内存中），真正保存到　MongoDB 数据库中（保存到硬盘上）。
 
 ### 解决那个讨厌的警告
 
