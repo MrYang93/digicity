@@ -258,37 +258,19 @@ bundle.js:894 Uncaught (in promise) Error: Objects are not valid as a React chil
 
 ### 使用 map 展开数组
 
-我们可以使用　ES6 自带的　map 来完成该任务。也可以加载　lodash 的　map 方法。
-
-小贴士：什么是　lodash ?
-lodash 是一个　JS 的库，它里面提供了很多　JS 的基础方法，方便使用　JS 语言。
-使用　lodash 是写　JS 代码的标配。
-小贴士结束
-
-安装　lodash
-
-```
-npm i --save lodash
-```
-
-然后，到　index.js 中导入一下
-
-```js
-import map from 'lodash/fp/map';
-```
-
 
 render 函数做如下调整：
 
 ```js
 render(){
-  const userList = map((user) => {
+  const userList = this.state.users.map((user, i) => {
     return (
-      <div key={user._id}>
-        {user.username}
+      <div key={i}>
+         username:
+        {user}
       </div>
     )
-  }, this.state.users);
+  });
 
   return(
     <div>
@@ -309,7 +291,6 @@ src/index.js
 import React, { Component } from 'react';
 import ReactDOM from 'react-dom';
 import axios from 'axios';
-import map from 'lodash/fp/map';
 
 
 class App extends Component {
@@ -326,13 +307,14 @@ class App extends Component {
     })
   }
   render(){
-    const userList = map((user) => {
+    const userList = this.state.users.map((user, i) => {
       return (
-        <div key={user._id}>
-          {user.username}
+        <div key={i}>
+           username:
+          {user}
         </div>
       )
-    }, this.state.users);
+    });
 
     return(
       <div>
