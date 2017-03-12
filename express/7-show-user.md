@@ -21,7 +21,6 @@ http://localhost:3000/users/一个真实的用户 id
 
 ### 前台代码
 
-
 我们先打开 mongo-express ，拷贝一个真实的 id 出来。然后粘贴到
 前台代码的 axios 请求中
 
@@ -42,7 +41,7 @@ class App extends Component {
     axios.get('http://localhost:3000/users/584dfb6fd5aa1c13955d5cca').then((response) => {
       console.log(response);
       this.setState({
-        user: response.data.user
+        user: response.data
       });
     })
   }
@@ -65,8 +64,6 @@ ReactDOM.render(<App/>,document.getElementById('app'));
 ```
 
 
-
-
 ### 后台增加请求一位用户信息的API
 
 
@@ -80,7 +77,6 @@ app.use(cors());
 const mongoose = require('mongoose');
 const User = require('./models/user');
 
-mongoose.Promise = global.Promise;
 mongoose.connect('mongodb://localhost:27017/digicity');
 // 执行此行代码之前，要保证 mongodb 数据库已经运行了，而且运行在 27017 端口
 
@@ -123,12 +119,12 @@ package.json
 
 ```json
 {
-  "name": "express-hello",
+  "name": "express-backend",
   "version": "1.0.0",
   "description": "",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "start": "nodemon index.js"
   },
   "keywords": [],
   "author": "",
