@@ -21,7 +21,9 @@ title: JS 独孤求败
   </div>
 </section>
 <div class="divider">
-  <a href="https://github.com/happypeter/digicity/commits/gh-pages">最后更新：2017年3月10日</a>
+  <a href="#linux">react</a>
+  <a href="#react">react</a>
+  <a href="#es6">react</a>
 </div>
 <div class="reviewers">
   <div class="name-card">
