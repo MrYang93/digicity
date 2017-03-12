@@ -21,9 +21,10 @@ title: JS 独孤求败
   </div>
 </section>
 <div class="divider">
-  <a href="#linux">react</a>
   <a href="#react">react</a>
-  <a href="#es6">react</a>
+  <a href="#express">express</a>
+  <a href="#http">http</a>
+
 </div>
 <div class="reviewers">
   <div class="name-card">
